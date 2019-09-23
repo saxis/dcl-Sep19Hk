@@ -1,6 +1,15 @@
-export function CreateFloor2(scene, DoorState): void {
-  const woodenDoorModel = new GLTFShape("models/Door_Wood_01/Door_Wood_01.glb");
+import { Door } from "../gameObjects/door";
+import { DoorState } from '../game';
 
+export function CreateFloor2(scene): void {
+//   const door = new Door(
+//     new GLTFShape("models/Door_Wood_01/Door_Wood_01.glb"),
+//     new Transform({
+//         position: new Vector3(19.7, 2, 19.42)
+//     }),
+//     new AudioClip("sounds/FEARPLAN.mp3")
+//   )
+  const woodenDoorModel = new GLTFShape("models/Door_Wood_01/Door_Wood_01.glb");
   const secondFloorDoor = new Entity();
   secondFloorDoor.setParent(scene);
   secondFloorDoor.addComponent(woodenDoorModel);

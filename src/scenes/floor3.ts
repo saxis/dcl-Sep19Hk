@@ -1,4 +1,7 @@
-export function CreateFloor3(scene, DoorState): void {
+import { DoorState } from '../game';
+
+export function CreateFloor3(scene): void {
+
   const woodenDoorModel = new GLTFShape("models/Door_Wood_01/Door_Wood_01.glb");
   const thirdFloorDoor = new Entity();
   thirdFloorDoor.setParent(scene);
