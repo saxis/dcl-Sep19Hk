@@ -1,4 +1,4 @@
-import { DoorState } from '../game';
+import { DoorState } from '../gameObjects/doorState';
 
 export function CreateFloor3(scene): void {
 

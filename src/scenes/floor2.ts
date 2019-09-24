@@ -1,5 +1,5 @@
-import { Door } from "../gameObjects/door";
-import { DoorState } from '../game';
+//import { Door } from "../gameObjects/door";
+import { DoorState } from '../gameObjects/doorState';
 
 export function CreateFloor2(scene): void {
 //   const door = new Door(

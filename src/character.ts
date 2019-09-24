@@ -34,7 +34,8 @@ gnark.addComponent(
   })
 );
 
-let gnarkShape = new GLTFShape("models/ghoulBossWalking.glb");
+//let gnarkShape = new GLTFShape("models/ghoulBossWalking.glb");
+let gnarkShape = new GLTFShape('models/goblinWalking.glb')
 //let gnarkShape = new GLTFShape('models/zombie_murderer/zombie_murderer/resized.gltf')
 
 gnark.addComponent(gnarkShape);
