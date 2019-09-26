@@ -1,37 +1,7 @@
 //import { BuilderHUD } from './modules/BuilderHUD';
 
 
-const chest_Top_Iron_01 = new Entity()
-const gltfShape_12 = new GLTFShape('models/Chest_Top_Iron_01/Chest_Top_Iron_01.glb')
-chest_Top_Iron_01.addComponentOrReplace(gltfShape_12)
-const transform_16 = new Transform({
-  position: new Vector3(14.5, 0, 14),
-  rotation: new Quaternion(0, 0, 0, 1),
-  scale: new Vector3(1, 1, 1)
-})
-chest_Top_Iron_01.addComponentOrReplace(transform_16)
-engine.addEntity(chest_Top_Iron_01)
 
-const module_Stone_Straight_01 = new Entity()
-const gltfShape_15 = new GLTFShape('models/Module_Stone_Straight_01/Module_Stone_Straight_01.glb')
-module_Stone_Straight_01.addComponentOrReplace(gltfShape_15)
-const transform_19 = new Transform({
-  position: new Vector3(14.5, 0, 12.5),
-  rotation: new Quaternion(0, 0, 0, 1),
-  scale: new Vector3(1, 1, 1)
-})
-module_Stone_Straight_01.addComponentOrReplace(transform_19)
-engine.addEntity(module_Stone_Straight_01)
-
-const module_Stone_Straight_02 = new Entity()
-module_Stone_Straight_02.addComponentOrReplace(gltfShape_15)
-const transform_20 = new Transform({
-  position: new Vector3(18.5, 0, 12.5),
-  rotation: new Quaternion(0, 0, 0, 1),
-  scale: new Vector3(1, 1, 1)
-})
-module_Stone_Straight_02.addComponentOrReplace(transform_20)
-engine.addEntity(module_Stone_Straight_02)
 
 
 // const column_Wood_5M = new Entity()

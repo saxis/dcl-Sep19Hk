@@ -1,11 +1,12 @@
 import { DoorState } from '../gameObjects/doorState';
+import resources from '../resources';
 
 export function CreateFloor3(scene): void {
 
-  const woodenDoorModel = new GLTFShape("models/Door_Wood_01/Door_Wood_01.glb");
+  //const woodenDoorModel = new GLTFShape("models/Door_Wood_01/Door_Wood_01.glb");
   const thirdFloorDoor = new Entity();
   thirdFloorDoor.setParent(scene);
-  thirdFloorDoor.addComponentOrReplace(woodenDoorModel);
+  thirdFloorDoor.addComponentOrReplace(resources.models.woodenDoor);
   const thirdFloorDoorLoc = new Transform({
     position: new Vector3(0.5, 4, 0),
     rotation: new Quaternion(0, 0, 0, 1)
@@ -21,7 +22,7 @@ export function CreateFloor3(scene): void {
   const thirdFloorDoorPivot = new Entity();
   thirdFloorDoorPivot.addComponent(
     new Transform({
-      position: new Vector3(19.7, 4, 19.42)
+      position: new Vector3(19.7, 5.6, 19.42)
     })
   );
   thirdFloorDoorPivot.addComponent(new DoorState());

@@ -1,5 +1,5 @@
 import { DoorState } from "../gameObjects/doorState";
-import { BuilderHUD } from "../modules/BuilderHUD";
+//import { BuilderHUD } from "../modules/BuilderHUD";
 import resources from "../resources";
 
 export function CreateFloor1(scene): void {
@@ -7,12 +7,12 @@ export function CreateFloor1(scene): void {
   const gltfShape_21 = new GLTFShape("models/Stairs_L_01/Stairs_L_01.glb");
   stairsToFloor2.addComponentOrReplace(gltfShape_21);
   const transform_25 = new Transform({
-    position: new Vector3(26, 0, 21.65),
+    position: new Vector3(26, 1.6, 21.65),
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1, 1, 1)
   });
   stairsToFloor2.addComponentOrReplace(transform_25);
-  stairsToFloor2.addComponent(new AudioSource(resources.sounds.moveObject1))
+  stairsToFloor2.addComponent(new AudioSource(resources.sounds.moveObject1));
 
   const floor2Pillar = new Entity();
   const floor2PillarShape = new GLTFShape(
@@ -20,7 +20,7 @@ export function CreateFloor1(scene): void {
   );
   floor2Pillar.addComponentOrReplace(floor2PillarShape);
   const floor2PillarLoc = new Transform({
-    position: new Vector3(19.4, 0, 21),
+    position: new Vector3(19.4, 1.6, 21),
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1, 2.5, 1)
   });
@@ -32,7 +32,7 @@ export function CreateFloor1(scene): void {
   button.addComponent(
     new Transform({
       //position: new Vector3(12, 0, 5.5)
-      position: new Vector3(16, 2.58, 4.65),
+      position: new Vector3(16, 4.18, 4.65),
       rotation: Quaternion.Euler(90, 0, 0)
     })
   );
@@ -56,7 +56,7 @@ export function CreateFloor1(scene): void {
       state.closed = !state.closed;
       log("engine.entities ", engine.entities);
       engine.addEntity(stairsToFloor2);
-      stairsToFloor2.getComponent(AudioSource).playOnce()
+      stairsToFloor2.getComponent(AudioSource).playOnce();
       engine.addEntity(floor2Pillar);
       engine.addEntity(Wall_Stone_Small);
     })
@@ -64,8 +64,8 @@ export function CreateFloor1(scene): void {
 
   const bottomFloorDoor = new Entity();
   bottomFloorDoor.setParent(scene);
-  const woodenDoorModel = new GLTFShape("models/Door_Wood_01/Door_Wood_01.glb");
-  bottomFloorDoor.addComponentOrReplace(woodenDoorModel);
+  //const woodenDoorModel = new GLTFShape("models/Door_Wood_01/Door_Wood_01.glb");
+  bottomFloorDoor.addComponentOrReplace(resources.models.woodenDoor);
   const firstFloorDoorLoc = new Transform({
     position: new Vector3(0.5, 0, 0),
     rotation: new Quaternion(0, 0, 0, 1)
@@ -79,7 +79,7 @@ export function CreateFloor1(scene): void {
   const bottomDoorPivot = new Entity();
   bottomDoorPivot.addComponent(
     new Transform({
-      position: new Vector3(19.7, 0, 19.42)
+      position: new Vector3(19.7, 1.6, 19.42)
     })
   );
   bottomDoorPivot.addComponent(new DoorState());
@@ -93,34 +93,29 @@ export function CreateFloor1(scene): void {
     })
   );
 
-
-
   const bagofpotatoes = new Entity();
-  const bagofpotatoesShape = new GLTFShape("models/sackofpotatoes.glb");
   const sackofpotatoesLoc = new Transform({
-    position: new Vector3(12, 0, 14),
+    position: new Vector3(12, 1.6, 14),
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1, 1, 1)
   });
-  bagofpotatoes.addComponent(bagofpotatoesShape);
+  bagofpotatoes.addComponent(resources.models.sackOfPotatoes);
   bagofpotatoes.addComponent(sackofpotatoesLoc);
   engine.addEntity(bagofpotatoes);
 
   const lantern_lit = new Entity();
-  //const lantern_litShape = new GLTFShape("models/lantern_lit.glb");
   const loc_lantern_lit = new Transform({
-    position: new Vector3(24, 0, 4.3),
+    position: new Vector3(24, 1.6, 4.3),
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1, 1, 1)
   });
-  //lantern_lit.addComponent(lantern_litShape);
-  lantern_lit.addComponent(resources.models.lanternLit)
+  lantern_lit.addComponent(resources.models.lanternLit);
   lantern_lit.addComponent(loc_lantern_lit);
   engine.addEntity(lantern_lit);
 
   const lantern_lit2 = new Entity();
   const loc_lantern_lit2 = new Transform({
-    position: new Vector3(20, 0, 4.3),
+    position: new Vector3(20, 1.6, 4.3),
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1, 1, 1)
   });
@@ -128,19 +123,9 @@ export function CreateFloor1(scene): void {
   lantern_lit2.addComponent(loc_lantern_lit2);
   engine.addEntity(lantern_lit2);
 
-  // const lantern_lit3 = new Entity();
-  // const loc_lantern_lit3 = new Transform({
-  //   position: new Vector3(16, 0, 4.3),
-  //   rotation: new Quaternion(0, 0, 0, 1),
-  //   scale: new Vector3(1, 1, 1)
-  // })
-  // lantern_lit3.addComponent(lantern_litShape)
-  // lantern_lit3.addComponent(loc_lantern_lit3)
-  // engine.addEntity(lantern_lit3)
-
   const lantern_lit4 = new Entity();
   const loc_lantern_lit4 = new Transform({
-    position: new Vector3(12, 0, 4.3),
+    position: new Vector3(12, 1.6, 4.3),
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1, 1, 1)
   });
@@ -149,26 +134,61 @@ export function CreateFloor1(scene): void {
   engine.addEntity(lantern_lit4);
 
   const table_Wood_01 = new Entity();
-  const gltfShape_9 = new GLTFShape("models/orc_table.glb");
-  table_Wood_01.addComponentOrReplace(gltfShape_9);
+  table_Wood_01.addComponent(resources.models.woodTable);
   const transform_13 = new Transform({
-    position: new Vector3(14, 0, 8.5),
+    position: new Vector3(14, 1.6, 8.5),
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1, 1, 1)
   });
   table_Wood_01.addComponentOrReplace(transform_13);
   engine.addEntity(table_Wood_01);
 
-  const bench_Circular_01 = new Entity();
-  const gltfShape_8 = new GLTFShape("models/orc_chair.glb");
-  bench_Circular_01.addComponentOrReplace(gltfShape_8);
-  const transform_12 = new Transform({
-    position: new Vector3(15.5, 0, 7.5),
-    rotation: Quaternion.Euler(0, -90, 0),
+  // const bench_Circular_01 = new Entity();
+  // const gltfShape_8 = new GLTFShape("models/orc_chair.glb");
+  // bench_Circular_01.addComponentOrReplace(gltfShape_8);
+  // const transform_12 = new Transform({
+  //   position: new Vector3(15.5, 0, 7.5),
+  //   rotation: Quaternion.Euler(0, -90, 0),
+  //   scale: new Vector3(1, 1, 1)
+  // });
+  // bench_Circular_01.addComponentOrReplace(transform_12);
+  // engine.addEntity(bench_Circular_01);
+
+  const chest_Top_Iron_01 = new Entity();
+  const gltfShape_12 = new GLTFShape(
+    "models/Chest_Top_Iron_01/Chest_Top_Iron_01.glb"
+  );
+  chest_Top_Iron_01.addComponentOrReplace(gltfShape_12);
+  const transform_16 = new Transform({
+    position: new Vector3(14.5, 1.6, 14),
+    rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1, 1, 1)
   });
-  bench_Circular_01.addComponentOrReplace(transform_12);
-  engine.addEntity(bench_Circular_01);
+  chest_Top_Iron_01.addComponentOrReplace(transform_16);
+  engine.addEntity(chest_Top_Iron_01);
+
+  const module_Stone_Straight_01 = new Entity();
+  const gltfShape_15 = new GLTFShape(
+    "models/Module_Stone_Straight_01/Module_Stone_Straight_01.glb"
+  );
+  module_Stone_Straight_01.addComponentOrReplace(gltfShape_15);
+  const transform_19 = new Transform({
+    position: new Vector3(14.5, 1.6, 12.5),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1, 1, 1)
+  });
+  module_Stone_Straight_01.addComponentOrReplace(transform_19);
+  engine.addEntity(module_Stone_Straight_01);
+
+  const module_Stone_Straight_02 = new Entity();
+  module_Stone_Straight_02.addComponentOrReplace(gltfShape_15);
+  const transform_20 = new Transform({
+    position: new Vector3(18.5, 1.6, 12.5),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1, 1, 1)
+  });
+  module_Stone_Straight_02.addComponentOrReplace(transform_20);
+  engine.addEntity(module_Stone_Straight_02);
 
   const chest_Base_Iron_01 = new Entity();
   const gltfShape_11 = new GLTFShape(
@@ -176,7 +196,7 @@ export function CreateFloor1(scene): void {
   );
   chest_Base_Iron_01.addComponentOrReplace(gltfShape_11);
   const transform_15 = new Transform({
-    position: new Vector3(14.5, 0, 14),
+    position: new Vector3(14.5, 1.6, 14),
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1, 1, 1)
   });
@@ -186,7 +206,7 @@ export function CreateFloor1(scene): void {
   const orc_chandellier = new Entity();
   const chandellier_model = new GLTFShape("models/candelabra1.glb");
   const orc_chandellierLoc = new Transform({
-    position: new Vector3(24, 0, 5.5),
+    position: new Vector3(24, 1.6, 5.5),
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1, 1, 1)
   });
@@ -200,12 +220,11 @@ export function CreateFloor1(scene): void {
   );
   Wall_Stone_Small.addComponentOrReplace(gltfShape_32);
   const transform_36 = new Transform({
-    position: new Vector3(21.1, 4, 19.6),
+    position: new Vector3(21.1, 5.6, 19.6),
     rotation: Quaternion.Euler(90, 0, 0),
     scale: new Vector3(1.8, 1, 1)
   });
   Wall_Stone_Small.addComponentOrReplace(transform_36);
-
 
   // const hud: BuilderHUD = new BuilderHUD();
   // hud.attachToEntity(button);

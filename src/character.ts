@@ -1,13 +1,13 @@
-import { BuilderHUD } from "./modules/BuilderHUD";
+//import { BuilderHUD } from "./modules/BuilderHUD";
 import utils from "../node_modules/decentraland-ecs-utils/index";
 import { MovableEntity } from "./gameObjects/movableEntity";
 import resources from "./resources";
 
 //model stuff
-const point1 = new Vector3(24, 0, 5.5);
-const point2 = new Vector3(12, 0, 5.5);
-const point3 = new Vector3(12, 0, 17.5);
-const point4 = new Vector3(24, 0, 17.5);
+const point1 = new Vector3(24, 1.6, 5.5);
+const point2 = new Vector3(12, 1.6, 5.5);
+const point3 = new Vector3(12, 1.6, 17.5);
+const point4 = new Vector3(24, 1.6, 17.5);
 
 const path: Vector3[] = [point1, point2, point3, point4];
 const TURN_TIME = 0.9;
@@ -27,11 +27,10 @@ export const paused = engine.getComponentGroup(TimeOut);
 
 const lantern_lit3 = new MovableEntity(
   resources.models.lanternLit,
-  { position: new Vector3(16, 0, 4.3) },
+  { position: new Vector3(16, 1.6, 4.3) },
   resources.sounds.moveObject1,
   new Vector3(0.5, 0, 0)
-)
-
+);
 
 // LerpData component
 @Component("lerpData")
@@ -85,6 +84,7 @@ goblin.addComponent(
       deathFromFront.playing = false;
       //hitInFace.play()
       //hitInFace.looping = false
+
       HIT_POINTS = HIT_POINTS - 1;
       log("hit points is now: ", HIT_POINTS);
 
@@ -93,8 +93,9 @@ goblin.addComponent(
         dead = true;
         deathFromFront.playing = true;
         deathFromFront.looping = false;
-        lantern_lit3.getComponent(utils.ToggleComponent).toggle()
+        lantern_lit3.getComponent(utils.ToggleComponent).toggle();
       }
+
       if (dead == false && hitInFace.playing == false) {
         log("play hit in face looping false");
         hitInFace.reset();
@@ -103,28 +104,28 @@ goblin.addComponent(
         hitInFace.looping = false;
       }
     } else {
-      log('grab the key from the corpse')
+      log("grab the key from the corpse");
     }
   })
 );
 
 const book1 = new Entity();
 engine.addEntity(book1);
-book1.addComponent(resources.models.openBook)
+book1.addComponent(resources.models.openBook);
 book1.addComponent(
   new Transform({
-    position: new Vector3(13.8, 1, 8.2),
+    position: new Vector3(13.8, 2.6, 8.2),
     rotation: Quaternion.Euler(0, 90, 0)
   })
 );
 book1.addComponent(
   new OnClick((): void => {
     log("book clicked");
+
+    engine.addEntity(goblin);
+    walkClip.play();
   })
 );
-
-engine.addEntity(goblin);
-walkClip.play();
 
 // Walk System
 export class GnarkWalk {

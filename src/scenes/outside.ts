@@ -1,4 +1,4 @@
-//import { BuilderHUD } from "../modules/BuilderHUD";
+import { BuilderHUD } from "../modules/BuilderHUD";
 import { spawnEntity } from '../modules/SpawnerFunctions'
 import resources from '../resources';
 
@@ -79,26 +79,248 @@ export function CreateOutside(): void {
   grass05.addComponentOrReplace(transform_14);
   engine.addEntity(grass05);
 
-  const outsidestairs1 = new Entity()
   const osShape = new GLTFShape('models/Module_Stair_Stones_3M/Module_Stair_Stones_3M.glb')
+
+  const outsidestairs1 = new Entity()
   const outsidestairs1Loc = new Transform({
     position: new Vector3(32, 0, 41),
     rotation: new Quaternion(0, 0, 0, 1),
-    scale: new Vector3(1.3, 1, 1)
+    scale: new Vector3(1.4, 1, 1)
   })
   outsidestairs1.addComponent(osShape)
   outsidestairs1.addComponent(outsidestairs1Loc)
   engine.addEntity(outsidestairs1)
 
+  const outsidestairs1a = new Entity()
+  const outsidestairs1aLoc = new Transform({
+    position: new Vector3(32, .4, 37),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs1a.addComponent(osShape)
+  outsidestairs1a.addComponent(outsidestairs1aLoc)
+  engine.addEntity(outsidestairs1a)
+
+  const outsidestairs1b = new Entity()
+  const outsidestairs1bLoc = new Transform({
+    position: new Vector3(32, .8, 33),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs1b.addComponent(osShape)
+  outsidestairs1b.addComponent(outsidestairs1bLoc)
+  engine.addEntity(outsidestairs1b)
+
+  const outsidestairs1c = new Entity()
+  const outsidestairs1cLoc = new Transform({
+    position: new Vector3(32, 1.2, 29),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs1c.addComponent(osShape)
+  outsidestairs1c.addComponent(outsidestairs1cLoc)
+  engine.addEntity(outsidestairs1c)
+
   const outsidestairs2 = new Entity()
   const outsidestairs2Loc = new Transform({
     position: new Vector3(28, 0, 41),
     rotation: new Quaternion(0, 0, 0, 1),
-    scale: new Vector3(1.3, 1, 1)
+    scale: new Vector3(1.4, 1, 1)
   })
   outsidestairs2.addComponent(osShape)
   outsidestairs2.addComponent(outsidestairs2Loc)
   engine.addEntity(outsidestairs2)
+
+  const outsidestairs2a = new Entity()
+  const outsidestairs2aLoc = new Transform({
+    position: new Vector3(28, .4, 37),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs2a.addComponent(osShape)
+  outsidestairs2a.addComponent(outsidestairs2aLoc)
+  engine.addEntity(outsidestairs2a)
+
+  const outsidestairs2b = new Entity()
+  const outsidestairs2bLoc = new Transform({
+    position: new Vector3(28, .8, 33),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs2b.addComponent(osShape)
+  outsidestairs2b.addComponent(outsidestairs2bLoc)
+  engine.addEntity(outsidestairs2b)
+
+  const outsidestairs2c = new Entity()
+  const outsidestairs2cLoc = new Transform({
+    position: new Vector3(28, 1.2, 29),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs2c.addComponent(osShape)
+  outsidestairs2c.addComponent(outsidestairs2cLoc)
+  engine.addEntity(outsidestairs2c)
+
+  const outsidestairs3 = new Entity()
+  const outsidestairs3Loc = new Transform({
+    position: new Vector3(24, 0, 41),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs3.addComponent(osShape)
+  outsidestairs3.addComponent(outsidestairs3Loc)
+  engine.addEntity(outsidestairs3)
+
+  const outsidestairs3a = new Entity()
+  const outsidestairs3aLoc = new Transform({
+    position: new Vector3(24, .4, 37),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs3a.addComponent(osShape)
+  outsidestairs3a.addComponent(outsidestairs3aLoc)
+  engine.addEntity(outsidestairs3a)
+
+  const outsidestairs3b = new Entity()
+  const outsidestairs3bLoc = new Transform({
+    position: new Vector3(24, .8, 33),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs3b.addComponent(osShape)
+  outsidestairs3b.addComponent(outsidestairs3bLoc)
+  engine.addEntity(outsidestairs3b)
+
+  const outsidestairs3c = new Entity()
+  const outsidestairs3cLoc = new Transform({
+    position: new Vector3(24, 1.2, 29),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs3c.addComponent(osShape)
+  outsidestairs3c.addComponent(outsidestairs3cLoc)
+  engine.addEntity(outsidestairs3c)
+
+
+  const outsidestairs4 = new Entity()
+  const outsidestairs4Loc = new Transform({
+    position: new Vector3(20, 0, 41),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs4.addComponent(osShape)
+  outsidestairs4.addComponent(outsidestairs4Loc)
+  engine.addEntity(outsidestairs4)
+
+  const outsidestairs4a = new Entity()
+  const outsidestairs4aLoc = new Transform({
+    position: new Vector3(20, .4, 37),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs4a.addComponent(osShape)
+  outsidestairs4a.addComponent(outsidestairs4aLoc)
+  engine.addEntity(outsidestairs4a)
+
+  const outsidestairs4b = new Entity()
+  const outsidestairs4bLoc = new Transform({
+    position: new Vector3(20, .8, 33),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs4b.addComponent(osShape)
+  outsidestairs4b.addComponent(outsidestairs4bLoc)
+  engine.addEntity(outsidestairs4b)
+
+  const outsidestairs4c = new Entity()
+  const outsidestairs4cLoc = new Transform({
+    position: new Vector3(20, 1.2, 29),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs4c.addComponent(osShape)
+  outsidestairs4c.addComponent(outsidestairs4cLoc)
+  engine.addEntity(outsidestairs4c)
+
+  const outsidestairs5 = new Entity()
+  const outsidestairs5Loc = new Transform({
+    position: new Vector3(16, 0, 41),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs5.addComponent(osShape)
+  outsidestairs5.addComponent(outsidestairs5Loc)
+  engine.addEntity(outsidestairs5)
+
+  const outsidestairs5a = new Entity()
+  const outsidestairs5aLoc = new Transform({
+    position: new Vector3(16, .4, 37),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs5a.addComponent(osShape)
+  outsidestairs5a.addComponent(outsidestairs5aLoc)
+  engine.addEntity(outsidestairs5a)
+
+  const outsidestairs5b = new Entity()
+  const outsidestairs5bLoc = new Transform({
+    position: new Vector3(16, .8, 33),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs5b.addComponent(osShape)
+  outsidestairs5b.addComponent(outsidestairs5bLoc)
+  engine.addEntity(outsidestairs5b)
+
+  const outsidestairs5c = new Entity()
+  const outsidestairs5cLoc = new Transform({
+    position: new Vector3(16, 1.2, 29),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.4, 1, 1)
+  })
+  outsidestairs5c.addComponent(osShape)
+  outsidestairs5c.addComponent(outsidestairs5cLoc)
+  engine.addEntity(outsidestairs5c)
+
+  const outsidestairs0 = new Entity()  
+  const outsidestairs0Loc = new Transform({
+    position: new Vector3(12, 0, 41),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.3, 1, 1)
+  })
+  outsidestairs0.addComponent(osShape)
+  outsidestairs0.addComponent(outsidestairs0Loc)
+  engine.addEntity(outsidestairs0)
+
+  const outsidestairs0a = new Entity()
+  const outsidestairs0aLoc = new Transform({
+    position: new Vector3(12, .4, 37),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.3, 1, 1)
+  })
+  outsidestairs0a.addComponent(osShape)
+  outsidestairs0a.addComponent(outsidestairs0aLoc)
+  engine.addEntity(outsidestairs0a)
+
+  const outsidestairs0b = new Entity()
+  const outsidestairs0bLoc = new Transform({
+    position: new Vector3(12, .8, 33),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.3, 1, 1)
+  })
+  outsidestairs0b.addComponent(osShape)
+  outsidestairs0b.addComponent(outsidestairs0bLoc)
+  engine.addEntity(outsidestairs0b)
+
+  const outsidestairs0c = new Entity()
+  const outsidestairs0cLoc = new Transform({
+    position: new Vector3(12, 1.2, 29),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1.3, 1, 1)
+  })
+  outsidestairs0c.addComponent(osShape)
+  outsidestairs0c.addComponent(outsidestairs0cLoc)
+  engine.addEntity(outsidestairs0c)
 
   const grassPatchLarge_04 = new Entity();
   const gltfShape_12 = new GLTFShape(
@@ -188,19 +410,19 @@ export function CreateOutside(): void {
   row2col3.addComponentOrReplace(resources.models.blackStone)
   const row3col3 = spawnEntity(12,0,12,0, 0, 0, 1, 1, 1)
   row3col3.addComponentOrReplace(resources.models.blackStone)
-  const row4col3 = spawnEntity(12,0,16,0, 0, 0, 1, 1, 1)
+  const row4col3 = spawnEntity(12,1.6,16,0, 0, 0, 1, 1, 1)
   row4col3.addComponentOrReplace(resources.models.blackStone)
-  const row5col3 = spawnEntity(12,0,20,0, 0, 0, 1, 1, 1)
+  const row5col3 = spawnEntity(12,1.6,20,0, 0, 0, 1, 1, 1)
   row5col3.addComponentOrReplace(resources.models.blackStone)
-  const row6col3 = spawnEntity(12,0,24,0, 0, 0, 1, 1, 1)
+  const row6col3 = spawnEntity(12,1.6,24,0, 0, 0, 1, 1, 1)
   row6col3.addComponentOrReplace(resources.models.blackStone)
-  const row7col3 = spawnEntity(12,0,28,0, 0, 0, 1, 1, 1)
+  const row7col3 = spawnEntity(12,1.6,28,0, 0, 0, 1, 1, 1)
   row7col3.addComponentOrReplace(resources.models.blackStone)
-  const row8col3 = spawnEntity(12,0,32,0, 0, 0, 1, 1, 1)
+  const row8col3 = spawnEntity(12,1.2,32,0, 0, 0, 1, 1, 1)
   row8col3.addComponentOrReplace(resources.models.blackStone)
-  const row9col3 = spawnEntity(12,0,36,0, 0, 0, 1, 1, 1)
+  const row9col3 = spawnEntity(12,.8,36,0, 0, 0, 1, 1, 1)
   row9col3.addComponentOrReplace(resources.models.blackStone)
-  const row10col3 = spawnEntity(12,0,40,0, 0, 0, 1, 1, 1)
+  const row10col3 = spawnEntity(12,.4,40,0, 0, 0, 1, 1, 1)
   row10col3.addComponentOrReplace(resources.models.blackStone)
   const row11col3 = spawnEntity(12,0,44,0, 0, 0, 1, 1, 1)
   row11col3.addComponentOrReplace(resources.models.blackStone)
@@ -215,19 +437,19 @@ export function CreateOutside(): void {
   row2col4.addComponentOrReplace(resources.models.blackStone)
   const row3col4 = spawnEntity(16,0,12,0, 0, 0, 1, 1, 1)
   row3col4.addComponentOrReplace(resources.models.blackStone)
-  const row4col4 = spawnEntity(16,0,16,0, 0, 0, 1, 1, 1)
+  const row4col4 = spawnEntity(16,1.6,16,0, 0, 0, 1, 1, 1)
   row4col4.addComponentOrReplace(resources.models.blackStone)
-  const row5col4 = spawnEntity(16,0,20,0, 0, 0, 1, 1, 1)
+  const row5col4 = spawnEntity(16,1.6,20,0, 0, 0, 1, 1, 1)
   row5col4.addComponentOrReplace(resources.models.blackStone)
-  const row6col4 = spawnEntity(16,0,24,0, 0, 0, 1, 1, 1)
+  const row6col4 = spawnEntity(16,1.6,24,0, 0, 0, 1, 1, 1)
   row6col4.addComponentOrReplace(resources.models.blackStone)
-  const row7col4 = spawnEntity(16,0,28,0, 0, 0, 1, 1, 1)
+  const row7col4 = spawnEntity(16,1.6,28,0, 0, 0, 1, 1, 1)
   row7col4.addComponentOrReplace(resources.models.blackStone)
-  const row8col4 = spawnEntity(16,0,32,0, 0, 0, 1, 1, 1)
+  const row8col4 = spawnEntity(16,1.2,32,0, 0, 0, 1, 1, 1)
   row8col4.addComponentOrReplace(resources.models.blackStone)
-  const row9col4 = spawnEntity(16,0,36,0, 0, 0, 1, 1, 1)
+  const row9col4 = spawnEntity(16,.8,36,0, 0, 0, 1, 1, 1)
   row9col4.addComponentOrReplace(resources.models.blackStone)
-  const row10col4 = spawnEntity(16,0,40,0, 0, 0, 1, 1, 1)
+  const row10col4 = spawnEntity(16,.4,40,0, 0, 0, 1, 1, 1)
   row10col4.addComponentOrReplace(resources.models.blackStone)
   const row11col4 = spawnEntity(16,0,44,0, 0, 0, 1, 1, 1)
   row11col4.addComponentOrReplace(resources.models.blackStone)
@@ -242,19 +464,19 @@ export function CreateOutside(): void {
   row2col5.addComponentOrReplace(resources.models.blackStone)
   const row3col5 = spawnEntity(20,0,12,0, 0, 0, 1, 1, 1)
   row3col5.addComponentOrReplace(resources.models.blackStone)
-  const row4col5 = spawnEntity(20,0,16,0, 0, 0, 1, 1, 1)
+  const row4col5 = spawnEntity(20,1.6,16,0, 0, 0, 1, 1, 1)
   row4col5.addComponentOrReplace(resources.models.blackStone)
-  const row5col5 = spawnEntity(20,0,20,0, 0, 0, 1, 1, 1)
+  const row5col5 = spawnEntity(20,1.6,20,0, 0, 0, 1, 1, 1)
   row5col5.addComponentOrReplace(resources.models.blackStone)
-  const row6col5 = spawnEntity(20,0,24,0, 0, 0, 1, 1, 1)
+  const row6col5 = spawnEntity(20,1.6,24,0, 0, 0, 1, 1, 1)
   row6col5.addComponentOrReplace(resources.models.blackStone)
-  const row7col5 = spawnEntity(20,0,28,0, 0, 0, 1, 1, 1)
+  const row7col5 = spawnEntity(20,1.6,28,0, 0, 0, 1, 1, 1)
   row7col5.addComponentOrReplace(resources.models.blackStone)
-  const row8col5 = spawnEntity(20,0,32,0, 0, 0, 1, 1, 1)
+  const row8col5 = spawnEntity(20,1.2,32,0, 0, 0, 1, 1, 1)
   row8col5.addComponentOrReplace(resources.models.blackStone)
-  const row9col5 = spawnEntity(20,0,36,0, 0, 0, 1, 1, 1)
+  const row9col5 = spawnEntity(20,.8,36,0, 0, 0, 1, 1, 1)
   row9col5.addComponentOrReplace(resources.models.blackStone)
-  const row10col5 = spawnEntity(20,0,40,0, 0, 0, 1, 1, 1)
+  const row10col5 = spawnEntity(20,.4,40,0, 0, 0, 1, 1, 1)
   row10col5.addComponentOrReplace(resources.models.blackStone)
   const row11col5 = spawnEntity(20,0,44,0, 0, 0, 1, 1, 1)
   row11col5.addComponentOrReplace(resources.models.blackStone)
@@ -269,19 +491,19 @@ export function CreateOutside(): void {
   row2col6.addComponentOrReplace(resources.models.blackStone)
   const row3col6 = spawnEntity(24,0,12,0, 0, 0, 1, 1, 1)
   row3col6.addComponentOrReplace(resources.models.blackStone)
-  const row4col6 = spawnEntity(24,0,16,0, 0, 0, 1, 1, 1)
+  const row4col6 = spawnEntity(24,1.6,16,0, 0, 0, 1, 1, 1)
   row4col6.addComponentOrReplace(resources.models.blackStone)
-  const row5col6 = spawnEntity(24,0,20,0, 0, 0, 1, 1, 1)
+  const row5col6 = spawnEntity(24,1.6,20,0, 0, 0, 1, 1, 1)
   row5col6.addComponentOrReplace(resources.models.blackStone)
-  const row6col6 = spawnEntity(24,0,24,0, 0, 0, 1, 1, 1)
+  const row6col6 = spawnEntity(24,1.6,24,0, 0, 0, 1, 1, 1)
   row6col6.addComponentOrReplace(resources.models.blackStone)
-  const row7col6 = spawnEntity(24,0,28,0, 0, 0, 1, 1, 1)
+  const row7col6 = spawnEntity(24,1.6,28,0, 0, 0, 1, 1, 1)
   row7col6.addComponentOrReplace(resources.models.blackStone)
-  const row8col6 = spawnEntity(24,0,32,0, 0, 0, 1, 1, 1)
+  const row8col6 = spawnEntity(24,1.2,32,0, 0, 0, 1, 1, 1)
   row8col6.addComponentOrReplace(resources.models.blackStone)
-  const row9col6 = spawnEntity(24,0,36,0, 0, 0, 1, 1, 1)
+  const row9col6 = spawnEntity(24,.8,36,0, 0, 0, 1, 1, 1)
   row9col6.addComponentOrReplace(resources.models.blackStone)
-  const row10col6 = spawnEntity(24,0,40,0, 0, 0, 1, 1, 1)
+  const row10col6 = spawnEntity(24,.4,40,0, 0, 0, 1, 1, 1)
   row10col6.addComponentOrReplace(resources.models.blackStone)
   const row11col6 = spawnEntity(24,0,44,0, 0, 0, 1, 1, 1)
   row11col6.addComponentOrReplace(resources.models.blackStone)
@@ -296,17 +518,17 @@ export function CreateOutside(): void {
   row2col7.addComponentOrReplace(resources.models.blackStone)
   const row3col7 = spawnEntity(28,0,12,0, 0, 0, 1, 1, 1)
   row3col7.addComponentOrReplace(resources.models.blackStone)
-  const row4col7 = spawnEntity(28,0,16,0, 0, 0, 1, 1, 1)
+  const row4col7 = spawnEntity(28,1.6,16,0, 0, 0, 1, 1, 1)
   row4col7.addComponentOrReplace(resources.models.blackStone)
-  const row5col7 = spawnEntity(28,0,20,0, 0, 0, 1, 1, 1)
+  const row5col7 = spawnEntity(28,1.6,20,0, 0, 0, 1, 1, 1)
   row5col7.addComponentOrReplace(resources.models.blackStone)
-  const row6col7 = spawnEntity(28,0,24,0, 0, 0, 1, 1, 1)
+  const row6col7 = spawnEntity(28,1.6,24,0, 0, 0, 1, 1, 1)
   row6col7.addComponentOrReplace(resources.models.blackStone)
-  const row7col7 = spawnEntity(28,0,28,0, 0, 0, 1, 1, 1)
+  const row7col7 = spawnEntity(28,1.6,28,0, 0, 0, 1, 1, 1)
   row7col7.addComponentOrReplace(resources.models.blackStone)
-  const row8col7 = spawnEntity(28,0,32,0, 0, 0, 1, 1, 1)
+  const row8col7 = spawnEntity(28,1.2,32,0, 0, 0, 1, 1, 1)
   row8col7.addComponentOrReplace(resources.models.blackStone)
-  const row9col7 = spawnEntity(28,0,36,0, 0, 0, 1, 1, 1)
+  const row9col7 = spawnEntity(28,.8,36,0, 0, 0, 1, 1, 1)
   row9col7.addComponentOrReplace(resources.models.blackStone)
   const row10col7 = spawnEntity(28,.4,40,0, 0, 0, 1, 1, 1)
   row10col7.addComponentOrReplace(resources.models.blackStone)
@@ -323,17 +545,17 @@ export function CreateOutside(): void {
   row2col8.addComponentOrReplace(resources.models.blackStone)
   const row3col8 = spawnEntity(32,0,12,0, 0, 0, 1, 1, 1)
   row3col8.addComponentOrReplace(resources.models.blackStone)
-  const row4col8 = spawnEntity(32,0,16,0, 0, 0, 1, 1, 1)
+  const row4col8 = spawnEntity(32,1.6,16,0, 0, 0, 1, 1, 1)
   row4col8.addComponentOrReplace(resources.models.blackStone)
-  const row5col8 = spawnEntity(32,0,20,0, 0, 0, 1, 1, 1)
+  const row5col8 = spawnEntity(32,1.6,20,0, 0, 0, 1, 1, 1)
   row5col8.addComponentOrReplace(resources.models.blackStone)
-  const row6col8 = spawnEntity(32,0,24,0, 0, 0, 1, 1, 1)
+  const row6col8 = spawnEntity(32,1.6,24,0, 0, 0, 1, 1, 1)
   row6col8.addComponentOrReplace(resources.models.blackStone)
-  const row7col8 = spawnEntity(32,0,28,0, 0, 0, 1, 1, 1)
+  const row7col8 = spawnEntity(32,1.6,28,0, 0, 0, 1, 1, 1)
   row7col8.addComponentOrReplace(resources.models.blackStone)
-  const row8col8 = spawnEntity(32,0,32,0, 0, 0, 1, 1, 1)
+  const row8col8 = spawnEntity(32,1.2,32,0, 0, 0, 1, 1, 1)
   row8col8.addComponentOrReplace(resources.models.blackStone)
-  const row9col8 = spawnEntity(32,0,36,0, 0, 0, 1, 1, 1)
+  const row9col8 = spawnEntity(32,.8,36,0, 0, 0, 1, 1, 1)
   row9col8.addComponentOrReplace(resources.models.blackStone)
   const row10col8 = spawnEntity(32,.4,40,0, 0, 0, 1, 1, 1)
   row10col8.addComponentOrReplace(resources.models.blackStone)
@@ -450,6 +672,174 @@ export function CreateOutside(): void {
   const row12col12 = spawnEntity(48,0,48,0, 0, 0, 1, 1, 1)
   row12col12.addComponentOrReplace(resources.models.blackStone) 
 
+
+  // const stone_Blocks_01 = new Entity()
+  // const stoneBlocksShape01 = new GLTFShape('models/Stone_Blocks_01.glb')
+  // stone_Blocks_01.addComponentOrReplace(stoneBlocksShape01)
+  // const stoneBlocks01Loc = new Transform({
+  //   position: new Vector3(40, 0, 40),
+  //   rotation: new Quaternion(0, 0, 0, 1),
+  //   scale: new Vector3(1, 1, 1)
+  // })
+  // stone_Blocks_01.addComponentOrReplace(stoneBlocks01Loc)
+  // engine.addEntity(stone_Blocks_01)
+  
+  // const stone_Blocks_End_01 = new Entity()
+  // const stoneBlocksEndShape01 = new GLTFShape('models/Stone_Blocks_End_01.glb')
+  // stone_Blocks_End_01.addComponentOrReplace(stoneBlocksEndShape01)
+  // const stoneBlocksEndLoc = new Transform({
+  //   position: new Vector3(42.5, 0, 42),
+  //   rotation: new Quaternion(0, 0, 0, 1),
+  //   scale: new Vector3(1, 1, 1)
+  // })
+  // stone_Blocks_End_01.addComponentOrReplace(stoneBlocksEndLoc)
+  // engine.addEntity(stone_Blocks_End_01)
+  
+  const wall_Stone_Large = new Entity()
+  const wallStoneLargeShape = new GLTFShape('models/Wall_Stone_Large.glb')
+  wall_Stone_Large.addComponentOrReplace(wallStoneLargeShape)
+  const wallStoneLargeLoc = new Transform({
+    position: new Vector3(32, 0, 35),
+    rotation: Quaternion.Euler(0,90,0),
+    scale: new Vector3(1, 1, 1)
+  })
+  wall_Stone_Large.addComponentOrReplace(wallStoneLargeLoc)
+  engine.addEntity(wall_Stone_Large)
+
+  const wall_Stone_Large1 = new Entity()
+  wall_Stone_Large1.addComponentOrReplace(wallStoneLargeShape)
+  const wallStoneLargeLoc1 = new Transform({
+    position: new Vector3(8, 0, 35),
+    rotation: Quaternion.Euler(0,90,0),
+    scale: new Vector3(1, 1, 1)
+  })
+  wall_Stone_Large1.addComponentOrReplace(wallStoneLargeLoc1)
+  engine.addEntity(wall_Stone_Large1)
+  
+  // const wall_Stone_Small = new Entity()
+  // const wallStoneSmallShape = new GLTFShape('models/Wall_Stone_Small.glb')
+  // wall_Stone_Small.addComponentOrReplace(wallStoneSmallShape)
+  // const wallStoneSmallLoc = new Transform({
+  //   position: new Vector3(27, 0, 11.5),
+  //   rotation: new Quaternion(0, 0, 0, 1),
+  //   scale: new Vector3(1, 1, 1)
+  // })
+  // wall_Stone_Small.addComponentOrReplace(wallStoneSmallLoc)
+  // engine.addEntity(wall_Stone_Small)
+  
+  // const wall_Stone_Medium = new Entity()
+  // const wallStoneMediumShape = new GLTFShape('models/Wall_Stone_Medium.glb')
+  //  wall_Stone_Medium.addComponentOrReplace(wallStoneMediumShape)
+  // const wallStoneMediumLoc = new Transform({
+  //   position: new Vector3(26.5, 0, 8.5),
+  //   rotation: new Quaternion(0, 0, 0, 1),
+  //   scale: new Vector3(1, 1, 1)
+  // })
+  // wall_Stone_Medium.addComponentOrReplace(wallStoneMediumLoc)
+  // engine.addEntity(wall_Stone_Medium)
+  
+  // const stone_Blocks_Curve_01 = new Entity()
+  // const stoneBlocksCurveShape = new GLTFShape('models/Stone_Blocks_Curve_01.glb')
+  // stone_Blocks_Curve_01.addComponentOrReplace(stoneBlocksCurveShape)
+  // const stoneBlocksCurveLoc = new Transform({
+  //   position: new Vector3(30, 0, 22.5),
+  //   rotation: new Quaternion(0, 0, 0, 1),
+  //   scale: new Vector3(1, 1, 1)
+  // })
+  // stone_Blocks_Curve_01.addComponentOrReplace(stoneBlocksCurveLoc)
+  // engine.addEntity(stone_Blocks_Curve_01)
+  
+  
+  
+  // const pillar_Top_Stones_Corner_01 = new Entity()
+  // const pillarTopStoneCornerShape = new GLTFShape('models/Pillar_Top_Stones_Corner_01.glb')
+  // pillar_Top_Stones_Corner_01.addComponentOrReplace(pillarTopStoneCornerShape)
+  // const pillarTopStonesCornerLoc = new Transform({
+  //   position: new Vector3(16.5, 0, 36.5),
+  //   rotation: new Quaternion(0, 0, 0, 1),
+  //   scale: new Vector3(1, 1, 1)
+  // })
+  // pillar_Top_Stones_Corner_01.addComponentOrReplace(pillarTopStonesCornerLoc)
+  // engine.addEntity(pillar_Top_Stones_Corner_01)
+  
+  // const pillar_Top_Stones_Big_01 = new Entity()
+  // const pillarTopStoneBigShape = new GLTFShape('models/Pillar_Top_Stones_Big_01.glb')
+  // pillar_Top_Stones_Big_01.addComponentOrReplace(pillarTopStoneBigShape)
+  // const pillarTopStonesLoc = new Transform({
+  //   position: new Vector3(17.5,3,36),
+  //   rotation: new Quaternion(0, 0, 0, 1),
+  //   scale: new Vector3(1, 1, 1)
+  // })
+  // pillar_Top_Stones_Big_01.addComponentOrReplace(pillarTopStonesLoc)
+  // engine.addEntity(pillar_Top_Stones_Big_01)
+  
+  // const pillar_Quad_Half_01 = new Entity()
+  // const pillarQuadHalfShape = new GLTFShape('models/Pillar_Quad_Half_01.glb')
+  // pillar_Quad_Half_01.addComponentOrReplace(pillarQuadHalfShape)
+  // const pillarQuadHalfLoc = new Transform({
+  //   position: new Vector3(20.5, 0, 38),
+  //   rotation: new Quaternion(0, 0, 0, 1),
+  //   scale: new Vector3(1, 1, 1)
+  // })
+  // pillar_Quad_Half_01.addComponentOrReplace(pillarQuadHalfLoc)
+  // engine.addEntity(pillar_Quad_Half_01)
+  
+  // const pillar_Quad_Full_01 = new Entity()
+  // const pillarQuadFullShape = new GLTFShape('models/Pillar_Quad_Full_01.glb')
+  // pillar_Quad_Full_01.addComponentOrReplace(pillarQuadFullShape)
+  // const pillarQuadFullLoc = new Transform({
+  //   position: new Vector3(18, 0, 39),
+  //   rotation: new Quaternion(0, 0, 0, 1),
+  //   scale: new Vector3(1, 1, 1)
+  // })
+  // pillar_Quad_Full_01.addComponentOrReplace(pillarQuadFullLoc)
+  // engine.addEntity(pillar_Quad_Full_01)
+  
+  // const module_Stair_Stones_5M = new Entity()
+  // const moduleStairStones5MShape = new GLTFShape('models/Module_Stair_Stones_5M.glb')
+  // module_Stair_Stones_5M.addComponentOrReplace(moduleStairStones5MShape)
+  // const moduleStairStone5MLoc = new Transform({
+  //   position: new Vector3(40, 0, 35.5),
+  //   rotation: new Quaternion(0, 0, 0, 1),
+  //   scale: new Vector3(1, 1, 1)
+  // })
+  // module_Stair_Stones_5M.addComponentOrReplace(moduleStairStone5MLoc)
+  // engine.addEntity(module_Stair_Stones_5M)
+  
+  // const module_Stair_Straight_1M = new Entity()
+  // const moduleStairStraight1MShape = new GLTFShape('models/Module_Stair_Straight_1M.glb')
+  // module_Stair_Straight_1M.addComponentOrReplace(moduleStairStraight1MShape)
+  // const moduleStairStraight1MLoc = new Transform({
+  //   position: new Vector3(43, 0, 38.5),
+  //   rotation: new Quaternion(0, 0, 0, 1),
+  //   scale: new Vector3(1, 1, 1)
+  // })
+  // module_Stair_Straight_1M.addComponentOrReplace(moduleStairStraight1MLoc)
+  // engine.addEntity(module_Stair_Straight_1M)
+  
+  // const module_Stair_Stones_1M = new Entity()
+  // const moduleStairStones1MShape = new GLTFShape('models/Module_Stair_Stones_1M.glb')
+  // module_Stair_Stones_1M.addComponentOrReplace(moduleStairStones1MShape)
+  // const moduleStairStone1MLoc = new Transform({
+  //   position: new Vector3(38, 0, 39),
+  //   rotation: new Quaternion(0, 0, 0, 1),
+  //   scale: new Vector3(1, 1, 1)
+  // })
+  // module_Stair_Stones_1M.addComponentOrReplace(moduleStairStone1MLoc)
+  // engine.addEntity(module_Stair_Stones_1M)
+  
+  // const module_Stair_Stones_3M = new Entity()
+  // const moduleStairStones3MShape = new GLTFShape('models/Module_Stair_Stones_3M.glb')
+  // module_Stair_Stones_3M.addComponentOrReplace(moduleStairStones3MShape)
+  // const moduleStairStones3MLoc = new Transform({
+  //   position: new Vector3(37.5, 0, 34.5),
+  //   rotation: new Quaternion(0, 0, 0, 1),
+  //   scale: new Vector3(1, 1, 1)
+  // })
+  // module_Stair_Stones_3M.addComponentOrReplace(moduleStairStones3MLoc)
+  // engine.addEntity(module_Stair_Stones_3M)
+
+
 // const archWay_02 = new Entity()
 // const gltfShape_26 = new GLTFShape('models/ArchWay_02/ArchWay_02.glb')
 // archWay_02.addComponentOrReplace(gltfShape_26)
@@ -461,6 +851,47 @@ export function CreateOutside(): void {
 // archWay_02.addComponentOrReplace(transform_30)
 // engine.addEntity(archWay_02)
 
-  //const hud: BuilderHUD = new BuilderHUD();
-  //hud.attachToEntity(outsidestairs1);
+const stairFence_01 = new Entity()
+  const stairFenceShape = new GLTFShape('models/StairFence_01.glb')
+  stairFence_01.addComponentOrReplace(stairFenceShape)
+  const stairFenceLoc = new Transform({
+    position: new Vector3(32, 0, 41),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1, 1, 1)
+  })
+  stairFence_01.addComponentOrReplace(stairFenceLoc)
+  engine.addEntity(stairFence_01)
+
+  const stairFence_01a = new Entity()
+  stairFence_01a.addComponentOrReplace(stairFenceShape)
+  const stairFenceLoc1a = new Transform({
+    position: new Vector3(8, 1, 33),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1, 1, 1)
+  })
+  stairFence_01a.addComponentOrReplace(stairFenceLoc1a)
+  engine.addEntity(stairFence_01a)
+
+  const stairFence_02 = new Entity()
+  stairFence_02.addComponentOrReplace(stairFenceShape)
+  const stairFenceLoc2 = new Transform({
+    position: new Vector3(8, 0, 41),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1, 1, 1)
+  })
+  stairFence_02.addComponentOrReplace(stairFenceLoc2)
+  engine.addEntity(stairFence_02)
+
+
+  const hud: BuilderHUD = new BuilderHUD();
+  // hud.attachToEntity(stone_Blocks_01);
+  // hud.attachToEntity(stone_Blocks_End_01);
+  // hud.attachToEntity(wall_Stone_Large)
+  // hud.attachToEntity(wall_Stone_Small)
+  // hud.attachToEntity(wall_Stone_Medium)
+  hud.attachToEntity(stairFence_01a)
+  // hud.attachToEntity(module_Stair_Stones_5M)
+  // hud.attachToEntity(module_Stair_Stones_1M)
+  // hud.attachToEntity(module_Stair_Straight_1M)
+  // hud.attachToEntity(module_Stair_Stones_3M)
 }
