@@ -1,135 +1,166 @@
-// const point1 = new Vector3(8, 0, 8)
-// const point2 = new Vector3(8, 0, 24)
-// const point3 = new Vector3(24, 0, 24)
-// const point4 = new Vector3(24, 0, 8)
-// const path: Vector3[] = [point1, point2, point3, point4]
-// const TURN_TIME = 0.9
+//import { BuilderHUD } from "./modules/BuilderHUD";
+//import utils from "../node_modules/decentraland-ecs-utils/index";
+//import { MovableEntity } from "./gameObjects/movableEntity";
+import resources from "./resources";
+import { PeasantDialog } from './ui/index';
 
-// @Component("timeOut")
-// export class TimeOut {
-//   timeLeft: number
-//   constructor( time: number){
-//     this.timeLeft = time
-//   }
+// export function CreatePeasant(gameCanvas: UICanvas):void {
+
+
 // }
 
-// export const paused = engine.getComponentGroup(TimeOut)
+const gameCanvas = new UICanvas();
 
-// // LerpData component
-// @Component("lerpData")
-// export class LerpData {
-//   array: Vector3[] = path
-//   origin: number = 0
-//   target: number = 1
-//   fraction: number = 0
-// }
+//model stuff
+const point1 = new Vector3(46, 0, 45);
+const point2 = new Vector3(46, 0, 3);
+const point3 = new Vector3(40, 0, 1);
+const point4 = new Vector3(3, 0, 1);
+const point5 = new Vector3(3, 0, 45);
 
-// let gnark = new Entity()
-// gnark.addComponent(new Transform({
-//   position: new Vector3(5, 0, 5)
-// }))
+const path: Vector3[] = [point1, point2, point3, point4, point5];
+const TURN_TIME = 0.9;
+const HIT_TIME = 1.0;
+let HIT_POINTS = 5;
+let dead = false;
 
-// let gnarkShape = new GLTFShape('models/peasantGirlAnimated4.glb')
+@Component("timeOut")
+export class TimeOut {
+  timeLeft: number;
+  constructor(time: number) {
+    this.timeLeft = time;
+  }
+}
 
-// gnark.addComponent(gnarkShape)
+export const paused = engine.getComponentGroup(TimeOut);
 
-// let gnarkAnimator = new Animator()
-// gnark.addComponent(gnarkAnimator)
+// LerpData component
+@Component("lerpData")
+export class LerpData {
+  array: Vector3[] = path;
+  origin: number = 0;
+  target: number = 1;
+  fraction: number = 0;
+}
 
-// gnark.addComponent(new LerpData())
+let peasantGirl = new Entity();
+peasantGirl.addComponent(
+  new Transform({
+    position: new Vector3(30, 0, 30)
+  })
+);
 
-// engine.addEntity(gnark)
+peasantGirl.addComponent(resources.models.peasantGirl);
 
-// //Add walk animation
-// const walkClip = new AnimationState('walkingInPlace')
-// gnarkAnimator.addClip(walkClip)
-// const turnRClip = new AnimationState('turnLeft')
-// turnRClip.looping = false
-// gnarkAnimator.addClip(turnRClip)
-// const raiseDeadClip = new AnimationState('talking')
-// gnarkAnimator.addClip(raiseDeadClip)
+let peasantGirlAnimator = new Animator();
+peasantGirl.addComponent(peasantGirlAnimator);
 
-// walkClip.play()
+//Add walk animation
+const walkClip = new AnimationState('walk')
+//const walkClip = new AnimationState("slowWalking");
+//const walkClip = new AnimationState("walkingInPlace");
+peasantGirlAnimator.addClip(walkClip);
+const turnRClip = new AnimationState("turnLeft");
+turnRClip.looping = false;
+peasantGirlAnimator.addClip(turnRClip);
+const raiseDeadClip = new AnimationState("talking");
+peasantGirlAnimator.addClip(raiseDeadClip);
 
-// // Walk System
-// export class GnarkWalk {
-//   update(dt: number) {
-//     if (!gnark.hasComponent(TimeOut) && !raiseDeadClip.playing ){
-//       let transform = gnark.getComponent(Transform)
-//       let path = gnark.getComponent(LerpData)
-// 	  walkClip.playing = true
-// 	  turnRClip.playing = false
-//       if (path.fraction < 1) {
-//         path.fraction += dt/12
-//         transform.position = Vector3.Lerp(
-//           path.array[path.origin],
-//           path.array[path.target],
-//           path.fraction
-//         ) 
-//       } else {
-//         path.origin = path.target
-//         path.target += 1
-//         if (path.target >= path.array.length) {
-//           path.target = 0
-//         }
-//         path.fraction = 0
-//         transform.lookAt(path.array[path.target])
-//         walkClip.pause()
-// 		turnRClip.play()
-// 		turnRClip.looping = false
-//         gnark.addComponent(new TimeOut(TURN_TIME))
-//       }
-//     }
-//   }
-// }
+peasantGirl.addComponent(new LerpData());
 
-// engine.addSystem(new GnarkWalk())
+const dialog = new PeasantDialog(gameCanvas)
 
-// export class WaitSystem {
-//   update(dt: number) {
-//     for (let ent of paused.entities){
-//       let time = ent.getComponentOrNull(TimeOut)
-//       if (time){
-//         if (time.timeLeft > 0) {
-//           time.timeLeft -= dt
-//         } else {
-//           ent.removeComponent(TimeOut)
-//         }
-//       }
-//     }
-//   }
-// }
+peasantGirl.addComponent(
+  new OnClick((): void => {
+    log("peasantGirl was clicked");
+    dialog.run();
+  })
+);
 
-// engine.addSystem(new WaitSystem())
+engine.addEntity(peasantGirl);
+walkClip.play();
 
-// export class BattleCry {
-//   update() {
-//     let transform = gnark.getComponent(Transform)
-//     let path = gnark.getComponent(LerpData)
-//     let dist = distance(transform.position, camera.position)
-//     if ( dist < 16) {
-//       if(raiseDeadClip.playing == false){
-//         raiseDeadClip.reset()
-//         raiseDeadClip.playing = true
-//         walkClip.playing = false
-//         turnRClip.playing = false
-// 	  }
-// 	  let playerPos = new Vector3(camera.position.x, 0, camera.position.z)
-//       transform.lookAt(playerPos)
-//     }
-//     else if (raiseDeadClip.playing){
-//       raiseDeadClip.stop()
-//       transform.lookAt(path.array[path.target])
-//     }
-//   }
-// }
+// Walk System
+export class GnarkWalk {
+  update(dt: number) {
+    if (!peasantGirl.hasComponent(TimeOut) && !raiseDeadClip.playing) {
+      let transform = peasantGirl.getComponent(Transform);
+      let path = peasantGirl.getComponent(LerpData);
+      walkClip.playing = true;
+      turnRClip.playing = false;
+      if (path.fraction < 1) {
+        path.fraction += dt / 12;
+        transform.position = Vector3.Lerp(
+          path.array[path.origin],
+          path.array[path.target],
+          path.fraction
+        );
+      } else {
+        path.origin = path.target;
+        path.target += 1;
+        if (path.target >= path.array.length) {
+          path.target = 0;
+        }
+        path.fraction = 0;
+        transform.lookAt(path.array[path.target]);
+        walkClip.pause();
+        turnRClip.play();
+        turnRClip.looping = false;
+        peasantGirl.addComponent(new TimeOut(TURN_TIME));
+      }
+    }
+  }
+}
 
-// engine.addSystem(new BattleCry())
+engine.addSystem(new GnarkWalk());
 
-// const camera = Camera.instance
+export class WaitSystem {
+  update(dt: number) {
+    for (let ent of paused.entities) {
+      let time = ent.getComponentOrNull(TimeOut);
+      if (time) {
+        if (time.timeLeft > 0) {
+          time.timeLeft -= dt;
+        } else {
+          ent.removeComponent(TimeOut);
+        }
+      }
+    }
+  }
+}
 
-// function distance(pos1: Vector3, pos2: Vector3): number {
-//   const a = pos1.x - pos2.x
-//   const b = pos1.z - pos2.z
-//   return a * a + b * b
-// }
+engine.addSystem(new WaitSystem());
+
+export class BattleCry {
+  update() {
+    let transform = peasantGirl.getComponent(Transform);
+    let path = peasantGirl.getComponent(LerpData);
+    let dist = distance(transform.position, camera.position);
+    if (dist < 16) {
+      if (raiseDeadClip.playing == false) {
+        raiseDeadClip.reset();
+        raiseDeadClip.playing = true;
+        walkClip.playing = false;
+        turnRClip.playing = false;
+      }
+      let playerPos = new Vector3(camera.position.x, 0, camera.position.z);
+      transform.lookAt(playerPos);
+    } else if (raiseDeadClip.playing) {
+      raiseDeadClip.stop();
+      transform.lookAt(path.array[path.target]);
+    }
+  }
+}
+
+engine.addSystem(new BattleCry());
+
+const camera = Camera.instance;
+
+function distance(pos1: Vector3, pos2: Vector3): number {
+  const a = pos1.x - pos2.x;
+  const b = pos1.z - pos2.z;
+  return a * a + b * b;
+}
+
+//const hud: BuilderHUD = new BuilderHUD();
+//hud.attachToEntity(bu)

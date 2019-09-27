@@ -13,6 +13,7 @@ const path: Vector3[] = [point1, point2, point3, point4];
 const TURN_TIME = 0.9;
 const HIT_TIME = 1.0;
 let HIT_POINTS = 5;
+let PLAYER_HP = 10;
 let dead = false;
 
 @Component("timeOut")
@@ -122,10 +123,12 @@ book1.addComponent(
   new OnClick((): void => {
     log("book clicked");
 
-    engine.addEntity(goblin);
-    walkClip.play();
+    
   })
 );
+
+engine.addEntity(goblin);
+walkClip.play();
 
 // Walk System
 export class GnarkWalk {
@@ -191,6 +194,11 @@ export class BattleCry {
           walkClip.playing = false;
           turnRClip.playing = false;
           hitInFace.playing = false;
+          PLAYER_HP--;
+          log('PLAYER HP is now: ', PLAYER_HP)
+          if(PLAYER_HP == 0) {
+            log('play dead music.. Kick player out of the scene')
+          }
         }
       }
       let playerPos = new Vector3(camera.position.x, 0, camera.position.z);

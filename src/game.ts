@@ -10,7 +10,6 @@ import { BaseScene } from "./gameObjects/baseScene";
 
 let baseScene = new BaseScene();
 
-
 CreateFloor1(baseScene)
 CreateFloor2(baseScene);
 CreateFloor3(baseScene);

@@ -7,34 +7,47 @@ export function CreateOutside(): void {
   const gltfShape_2 = new GLTFShape("models/Tree_Dead_01.glb");
   tree_Dead_01.addComponentOrReplace(gltfShape_2);
   const transform_3 = new Transform({
-    position: new Vector3(8.5, 0, 11.51),
+    position: new Vector3(5.5, 0, 12.51),
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1, 1, 1)
   });
   tree_Dead_01.addComponentOrReplace(transform_3);
   engine.addEntity(tree_Dead_01);
 
+  const tree_Dead_01a = new Entity();
+  tree_Dead_01a.addComponentOrReplace(gltfShape_2);
+  const transform_3a = new Transform({
+    position: new Vector3(5.5, 0, 25.51),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1, 1, 1)
+  });
+  tree_Dead_01a.addComponentOrReplace(transform_3a);
+  engine.addEntity(tree_Dead_01a);
+
+  const tree_Dead_01b = new Entity();
+  tree_Dead_01b.addComponentOrReplace(gltfShape_2);
+  const transform_3b = new Transform({
+    position: new Vector3(5.5, 0, 38.51),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1, 1, 1)
+  });
+  tree_Dead_01b.addComponentOrReplace(transform_3b);
+  engine.addEntity(tree_Dead_01b);
+
+  
+
+
+
   const tree_Dead_02 = new Entity();
   const gltfShape_3 = new GLTFShape("models/Tree_Dead_02.glb");
   tree_Dead_02.addComponentOrReplace(gltfShape_3);
   const transform_4 = new Transform({
-    position: new Vector3(35, 0, 21),
+    position: new Vector3(40, 0, 38),
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1, 1, 1)
   });
   tree_Dead_02.addComponentOrReplace(transform_4);
   engine.addEntity(tree_Dead_02);
-
-  const tree_Dead_04 = new Entity();
-  const gltfShape_4 = new GLTFShape("models/Tree_Dead_04.glb");
-  tree_Dead_04.addComponentOrReplace(gltfShape_4);
-  const transform_5 = new Transform({
-    position: new Vector3(37, 0, 12.5),
-    rotation: new Quaternion(0, 0, 0, 1),
-    scale: new Vector3(1, 1, 1)
-  });
-  tree_Dead_04.addComponentOrReplace(transform_5);
-  engine.addEntity(tree_Dead_04);
 
   const tree_Dead_03 = new Entity();
   const gltfShape_5 = new GLTFShape("models/Tree_Dead_03.glb");
@@ -46,6 +59,19 @@ export function CreateOutside(): void {
   });
   tree_Dead_03.addComponentOrReplace(transform_6);
   engine.addEntity(tree_Dead_03);
+
+  const tree_Dead_04 = new Entity();
+  const gltfShape_4 = new GLTFShape("models/Tree_Dead_04.glb");
+  tree_Dead_04.addComponentOrReplace(gltfShape_4);
+  const transform_5 = new Transform({
+    position: new Vector3(37, 0, 23.5),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1, 1, 1)
+  });
+  tree_Dead_04.addComponentOrReplace(transform_5);
+  engine.addEntity(tree_Dead_04);
+
+  
 
   const grass03 = new Entity();
   grass03.addComponentOrReplace(resources.models.twoBladesOfGrassShape);
@@ -79,7 +105,7 @@ export function CreateOutside(): void {
   grass05.addComponentOrReplace(transform_14);
   engine.addEntity(grass05);
 
-  const osShape = new GLTFShape('models/Module_Stair_Stones_3M/Module_Stair_Stones_3M.glb')
+  //const resources.models.outsideStairs = new GLTFShape('models/Module_Stair_Stones_3M/Module_Stair_Stones_3M.glb')
 
   const outsidestairs1 = new Entity()
   const outsidestairs1Loc = new Transform({
@@ -87,7 +113,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs1.addComponent(osShape)
+  outsidestairs1.addComponent(resources.models.outsideStairs)
   outsidestairs1.addComponent(outsidestairs1Loc)
   engine.addEntity(outsidestairs1)
 
@@ -97,7 +123,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs1a.addComponent(osShape)
+  outsidestairs1a.addComponent(resources.models.outsideStairs)
   outsidestairs1a.addComponent(outsidestairs1aLoc)
   engine.addEntity(outsidestairs1a)
 
@@ -107,7 +133,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs1b.addComponent(osShape)
+  outsidestairs1b.addComponent(resources.models.outsideStairs)
   outsidestairs1b.addComponent(outsidestairs1bLoc)
   engine.addEntity(outsidestairs1b)
 
@@ -117,7 +143,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs1c.addComponent(osShape)
+  outsidestairs1c.addComponent(resources.models.outsideStairs)
   outsidestairs1c.addComponent(outsidestairs1cLoc)
   engine.addEntity(outsidestairs1c)
 
@@ -127,7 +153,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs2.addComponent(osShape)
+  outsidestairs2.addComponent(resources.models.outsideStairs)
   outsidestairs2.addComponent(outsidestairs2Loc)
   engine.addEntity(outsidestairs2)
 
@@ -137,7 +163,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs2a.addComponent(osShape)
+  outsidestairs2a.addComponent(resources.models.outsideStairs)
   outsidestairs2a.addComponent(outsidestairs2aLoc)
   engine.addEntity(outsidestairs2a)
 
@@ -147,7 +173,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs2b.addComponent(osShape)
+  outsidestairs2b.addComponent(resources.models.outsideStairs)
   outsidestairs2b.addComponent(outsidestairs2bLoc)
   engine.addEntity(outsidestairs2b)
 
@@ -157,7 +183,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs2c.addComponent(osShape)
+  outsidestairs2c.addComponent(resources.models.outsideStairs)
   outsidestairs2c.addComponent(outsidestairs2cLoc)
   engine.addEntity(outsidestairs2c)
 
@@ -167,7 +193,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs3.addComponent(osShape)
+  outsidestairs3.addComponent(resources.models.outsideStairs)
   outsidestairs3.addComponent(outsidestairs3Loc)
   engine.addEntity(outsidestairs3)
 
@@ -177,7 +203,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs3a.addComponent(osShape)
+  outsidestairs3a.addComponent(resources.models.outsideStairs)
   outsidestairs3a.addComponent(outsidestairs3aLoc)
   engine.addEntity(outsidestairs3a)
 
@@ -187,7 +213,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs3b.addComponent(osShape)
+  outsidestairs3b.addComponent(resources.models.outsideStairs)
   outsidestairs3b.addComponent(outsidestairs3bLoc)
   engine.addEntity(outsidestairs3b)
 
@@ -197,7 +223,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs3c.addComponent(osShape)
+  outsidestairs3c.addComponent(resources.models.outsideStairs)
   outsidestairs3c.addComponent(outsidestairs3cLoc)
   engine.addEntity(outsidestairs3c)
 
@@ -208,7 +234,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs4.addComponent(osShape)
+  outsidestairs4.addComponent(resources.models.outsideStairs)
   outsidestairs4.addComponent(outsidestairs4Loc)
   engine.addEntity(outsidestairs4)
 
@@ -218,7 +244,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs4a.addComponent(osShape)
+  outsidestairs4a.addComponent(resources.models.outsideStairs)
   outsidestairs4a.addComponent(outsidestairs4aLoc)
   engine.addEntity(outsidestairs4a)
 
@@ -228,7 +254,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs4b.addComponent(osShape)
+  outsidestairs4b.addComponent(resources.models.outsideStairs)
   outsidestairs4b.addComponent(outsidestairs4bLoc)
   engine.addEntity(outsidestairs4b)
 
@@ -238,7 +264,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs4c.addComponent(osShape)
+  outsidestairs4c.addComponent(resources.models.outsideStairs)
   outsidestairs4c.addComponent(outsidestairs4cLoc)
   engine.addEntity(outsidestairs4c)
 
@@ -248,7 +274,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs5.addComponent(osShape)
+  outsidestairs5.addComponent(resources.models.outsideStairs)
   outsidestairs5.addComponent(outsidestairs5Loc)
   engine.addEntity(outsidestairs5)
 
@@ -258,7 +284,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs5a.addComponent(osShape)
+  outsidestairs5a.addComponent(resources.models.outsideStairs)
   outsidestairs5a.addComponent(outsidestairs5aLoc)
   engine.addEntity(outsidestairs5a)
 
@@ -268,7 +294,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs5b.addComponent(osShape)
+  outsidestairs5b.addComponent(resources.models.outsideStairs)
   outsidestairs5b.addComponent(outsidestairs5bLoc)
   engine.addEntity(outsidestairs5b)
 
@@ -278,7 +304,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.4, 1, 1)
   })
-  outsidestairs5c.addComponent(osShape)
+  outsidestairs5c.addComponent(resources.models.outsideStairs)
   outsidestairs5c.addComponent(outsidestairs5cLoc)
   engine.addEntity(outsidestairs5c)
 
@@ -288,7 +314,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.3, 1, 1)
   })
-  outsidestairs0.addComponent(osShape)
+  outsidestairs0.addComponent(resources.models.outsideStairs)
   outsidestairs0.addComponent(outsidestairs0Loc)
   engine.addEntity(outsidestairs0)
 
@@ -298,7 +324,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.3, 1, 1)
   })
-  outsidestairs0a.addComponent(osShape)
+  outsidestairs0a.addComponent(resources.models.outsideStairs)
   outsidestairs0a.addComponent(outsidestairs0aLoc)
   engine.addEntity(outsidestairs0a)
 
@@ -308,7 +334,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.3, 1, 1)
   })
-  outsidestairs0b.addComponent(osShape)
+  outsidestairs0b.addComponent(resources.models.outsideStairs)
   outsidestairs0b.addComponent(outsidestairs0bLoc)
   engine.addEntity(outsidestairs0b)
 
@@ -318,7 +344,7 @@ export function CreateOutside(): void {
     rotation: new Quaternion(0, 0, 0, 1),
     scale: new Vector3(1.3, 1, 1)
   })
-  outsidestairs0c.addComponent(osShape)
+  outsidestairs0c.addComponent(resources.models.outsideStairs)
   outsidestairs0c.addComponent(outsidestairs0cLoc)
   engine.addEntity(outsidestairs0c)
 
@@ -406,9 +432,9 @@ export function CreateOutside(): void {
 
   const row1col3 = spawnEntity(12,0,4,0, 0, 0, 1, 1, 1)
   row1col3.addComponentOrReplace(resources.models.blackStone)
-  const row2col3 = spawnEntity(12,0,8,0, 0, 0, 1, 1, 1)
+  const row2col3 = spawnEntity(12,1.59,8,0, 0, 0, 1, 1, 1)
   row2col3.addComponentOrReplace(resources.models.blackStone)
-  const row3col3 = spawnEntity(12,0,12,0, 0, 0, 1, 1, 1)
+  const row3col3 = spawnEntity(12,1.59,12,0, 0, 0, 1, 1, 1)
   row3col3.addComponentOrReplace(resources.models.blackStone)
   const row4col3 = spawnEntity(12,1.6,16,0, 0, 0, 1, 1, 1)
   row4col3.addComponentOrReplace(resources.models.blackStone)
@@ -433,9 +459,9 @@ export function CreateOutside(): void {
 
   const row1col4 = spawnEntity(16,0,4,0, 0, 0, 1, 1, 1)
   row1col4.addComponentOrReplace(resources.models.blackStone)
-  const row2col4 = spawnEntity(16,0,8,0, 0, 0, 1, 1, 1)
+  const row2col4 = spawnEntity(16,1.59,8,0, 0, 0, 1, 1, 1)
   row2col4.addComponentOrReplace(resources.models.blackStone)
-  const row3col4 = spawnEntity(16,0,12,0, 0, 0, 1, 1, 1)
+  const row3col4 = spawnEntity(16,1.59,12,0, 0, 0, 1, 1, 1)
   row3col4.addComponentOrReplace(resources.models.blackStone)
   const row4col4 = spawnEntity(16,1.6,16,0, 0, 0, 1, 1, 1)
   row4col4.addComponentOrReplace(resources.models.blackStone)
@@ -460,9 +486,9 @@ export function CreateOutside(): void {
 
   const row1col5 = spawnEntity(20,0,4,0, 0, 0, 1, 1, 1)
   row1col5.addComponentOrReplace(resources.models.blackStone)
-  const row2col5 = spawnEntity(20,0,8,0, 0, 0, 1, 1, 1)
+  const row2col5 = spawnEntity(20,1.59,8,0, 0, 0, 1, 1, 1)
   row2col5.addComponentOrReplace(resources.models.blackStone)
-  const row3col5 = spawnEntity(20,0,12,0, 0, 0, 1, 1, 1)
+  const row3col5 = spawnEntity(20,1.59,12,0, 0, 0, 1, 1, 1)
   row3col5.addComponentOrReplace(resources.models.blackStone)
   const row4col5 = spawnEntity(20,1.6,16,0, 0, 0, 1, 1, 1)
   row4col5.addComponentOrReplace(resources.models.blackStone)
@@ -487,9 +513,9 @@ export function CreateOutside(): void {
 
   const row1col6 = spawnEntity(24,0,4,0, 0, 0, 1, 1, 1)
   row1col6.addComponentOrReplace(resources.models.blackStone)
-  const row2col6 = spawnEntity(24,0,8,0, 0, 0, 1, 1, 1)
+  const row2col6 = spawnEntity(24,1.59,8,0, 0, 0, 1, 1, 1)
   row2col6.addComponentOrReplace(resources.models.blackStone)
-  const row3col6 = spawnEntity(24,0,12,0, 0, 0, 1, 1, 1)
+  const row3col6 = spawnEntity(24,1.59,12,0, 0, 0, 1, 1, 1)
   row3col6.addComponentOrReplace(resources.models.blackStone)
   const row4col6 = spawnEntity(24,1.6,16,0, 0, 0, 1, 1, 1)
   row4col6.addComponentOrReplace(resources.models.blackStone)
@@ -514,9 +540,9 @@ export function CreateOutside(): void {
 
   const row1col7 = spawnEntity(28,0,4,0, 0, 0, 1, 1, 1)
   row1col7.addComponentOrReplace(resources.models.blackStone)
-  const row2col7 = spawnEntity(28,0,8,0, 0, 0, 1, 1, 1)
+  const row2col7 = spawnEntity(28,1.59,8,0, 0, 0, 1, 1, 1)
   row2col7.addComponentOrReplace(resources.models.blackStone)
-  const row3col7 = spawnEntity(28,0,12,0, 0, 0, 1, 1, 1)
+  const row3col7 = spawnEntity(28,1.59,12,0, 0, 0, 1, 1, 1)
   row3col7.addComponentOrReplace(resources.models.blackStone)
   const row4col7 = spawnEntity(28,1.6,16,0, 0, 0, 1, 1, 1)
   row4col7.addComponentOrReplace(resources.models.blackStone)
@@ -541,9 +567,9 @@ export function CreateOutside(): void {
 
   const row1col8 = spawnEntity(32,0,4,0, 0, 0, 1, 1, 1)
   row1col8.addComponentOrReplace(resources.models.blackStone)
-  const row2col8 = spawnEntity(32,0,8,0, 0, 0, 1, 1, 1)
+  const row2col8 = spawnEntity(32,1.59,8,0, 0, 0, 1, 1, 1)
   row2col8.addComponentOrReplace(resources.models.blackStone)
-  const row3col8 = spawnEntity(32,0,12,0, 0, 0, 1, 1, 1)
+  const row3col8 = spawnEntity(32,1.59,12,0, 0, 0, 1, 1, 1)
   row3col8.addComponentOrReplace(resources.models.blackStone)
   const row4col8 = spawnEntity(32,1.6,16,0, 0, 0, 1, 1, 1)
   row4col8.addComponentOrReplace(resources.models.blackStone)
@@ -695,26 +721,137 @@ export function CreateOutside(): void {
   // stone_Blocks_End_01.addComponentOrReplace(stoneBlocksEndLoc)
   // engine.addEntity(stone_Blocks_End_01)
   
-  const wall_Stone_Large = new Entity()
-  const wallStoneLargeShape = new GLTFShape('models/Wall_Stone_Large.glb')
-  wall_Stone_Large.addComponentOrReplace(wallStoneLargeShape)
-  const wallStoneLargeLoc = new Transform({
-    position: new Vector3(32, 0, 35),
-    rotation: Quaternion.Euler(0,90,0),
-    scale: new Vector3(1, 1, 1)
+  // const wall_Stone_Large = new Entity()
+  // const wallStoneLargeShape = new GLTFShape('models/Wall_Stone_Large.glb')
+  // wall_Stone_Large.addComponentOrReplace(wallStoneLargeShape)
+  // const wallStoneLargeLoc = new Transform({
+  //   position: new Vector3(32, 0, 35),
+  //   rotation: Quaternion.Euler(0,90,0),
+  //   scale: new Vector3(1, 1, 1)
+  // })
+  // wall_Stone_Large.addComponentOrReplace(wallStoneLargeLoc)
+  // engine.addEntity(wall_Stone_Large)
+
+  const stairFence_02 = new Entity()
+  stairFence_02.addComponentOrReplace(resources.models.stairFence)
+  const stairFenceLoc2 = new Transform({
+    position: new Vector3(8, 0, 41),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(2, 1, 1)
   })
-  wall_Stone_Large.addComponentOrReplace(wallStoneLargeLoc)
-  engine.addEntity(wall_Stone_Large)
+  stairFence_02.addComponentOrReplace(stairFenceLoc2)
+  engine.addEntity(stairFence_02)
+
 
   const wall_Stone_Large1 = new Entity()
-  wall_Stone_Large1.addComponentOrReplace(wallStoneLargeShape)
+  wall_Stone_Large1.addComponentOrReplace(resources.models.wallStoneLarge)
   const wallStoneLargeLoc1 = new Transform({
-    position: new Vector3(8, 0, 35),
+    position: new Vector3(8, 0, 37),
     rotation: Quaternion.Euler(0,90,0),
-    scale: new Vector3(1, 1, 1)
+    scale: new Vector3(.6, .85, 1)
   })
   wall_Stone_Large1.addComponentOrReplace(wallStoneLargeLoc1)
   engine.addEntity(wall_Stone_Large1)
+
+  const stairFence_01a = new Entity()
+  stairFence_01a.addComponentOrReplace(resources.models.stairFence)
+  const stairFenceLoc1a = new Transform({
+    position: new Vector3(8, 0, 37),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1, 2, 1)
+  })
+  stairFence_01a.addComponentOrReplace(stairFenceLoc1a)
+  engine.addEntity(stairFence_01a)
+
+  const wall_Stone_Large2 = new Entity()
+  wall_Stone_Large2.addComponentOrReplace(resources.models.wallStoneLarge)
+  const wallStoneLargeLoc2 = new Transform({
+    position: new Vector3(8, 0, 32.9),
+    rotation: Quaternion.Euler(0,90,0),
+    scale: new Vector3(.65, 1.7, 1)
+  })
+  wall_Stone_Large2.addComponentOrReplace(wallStoneLargeLoc2)
+  engine.addEntity(wall_Stone_Large2)
+
+  const stairFence_02a = new Entity()
+  stairFence_02a.addComponentOrReplace(resources.models.stairFence)
+  const stairFenceLoc2a = new Transform({
+    position: new Vector3(8, 0, 33),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1, 3.8, 1)
+  })
+  stairFence_02a.addComponentOrReplace(stairFenceLoc2a)
+  engine.addEntity(stairFence_02a)
+
+  const wall_Stone_Large3 = new Entity()
+  wall_Stone_Large3.addComponentOrReplace(resources.models.wallStoneLarge)
+  const wallStoneLargeLoc3 = new Transform({
+    position: new Vector3(8, 0, 28.5),
+    rotation: Quaternion.Euler(0,90,0),
+    scale: new Vector3(.7, 3.2, 1)
+  })
+  wall_Stone_Large3.addComponentOrReplace(wallStoneLargeLoc3)
+  engine.addEntity(wall_Stone_Large3)
+
+  const stairFence_03a = new Entity()
+  stairFence_03a.addComponentOrReplace(resources.models.stairFence)
+  const stairFenceLoc3a = new Transform({
+    position: new Vector3(8, 0, 29),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1, 5.8, 1)
+  })
+  stairFence_03a.addComponentOrReplace(stairFenceLoc3a)
+  engine.addEntity(stairFence_03a)
+
+  const wall_Stone_Large4 = new Entity()
+  wall_Stone_Large4.addComponentOrReplace(resources.models.wallStoneLarge)
+  const wallStoneLarge4Loc = new Transform({
+    position: new Vector3(8, 0, 23),
+    rotation: Quaternion.Euler(0,90,0),
+    scale: new Vector3(1, 4.7, 1)
+  })
+  wall_Stone_Large4.addComponentOrReplace(wallStoneLarge4Loc)
+  engine.addEntity(wall_Stone_Large4)
+
+  const wall_Stone_Large5 = new Entity()
+  wall_Stone_Large5.addComponentOrReplace(resources.models.wallStoneLarge)
+  const wallStoneLarge5Loc = new Transform({
+    position: new Vector3(8, 0, 19),
+    rotation: Quaternion.Euler(0,90,0),
+    scale: new Vector3(1, 4.7, 1)
+  })
+  wall_Stone_Large5.addComponentOrReplace(wallStoneLarge5Loc)
+  engine.addEntity(wall_Stone_Large5)
+
+  const wall_Stone_Large6 = new Entity()
+  wall_Stone_Large6.addComponentOrReplace(resources.models.wallStoneLarge)
+  const wallStoneLarge6Loc = new Transform({
+    position: new Vector3(8, 0, 14),
+    rotation: Quaternion.Euler(0,90,0),
+    scale: new Vector3(1, 4.7, 1)
+  })
+  wall_Stone_Large6.addComponentOrReplace(wallStoneLarge6Loc)
+  engine.addEntity(wall_Stone_Large6)
+
+  const wall_Stone_Large7 = new Entity()
+  wall_Stone_Large7.addComponentOrReplace(resources.models.wallStoneLarge)
+  const wallStoneLarge7Loc = new Transform({
+    position: new Vector3(8, 0, 9),
+    rotation: Quaternion.Euler(0,90,0),
+    scale: new Vector3(1, 4.7, 1)
+  })
+  wall_Stone_Large7.addComponentOrReplace(wallStoneLarge7Loc)
+  engine.addEntity(wall_Stone_Large7)
+
+  const wall_Stone_Large8 = new Entity()
+  wall_Stone_Large8.addComponentOrReplace(resources.models.wallStoneLarge)
+  const wallStoneLarge8Loc = new Transform({
+    position: new Vector3(8, 0, 4),
+    rotation: Quaternion.Euler(0,90,0),
+    scale: new Vector3(1, 4.7, 1)
+  })
+  wall_Stone_Large8.addComponentOrReplace(wallStoneLarge8Loc)
+  engine.addEntity(wall_Stone_Large8)
   
   // const wall_Stone_Small = new Entity()
   // const wallStoneSmallShape = new GLTFShape('models/Wall_Stone_Small.glb')
@@ -851,46 +988,198 @@ export function CreateOutside(): void {
 // archWay_02.addComponentOrReplace(transform_30)
 // engine.addEntity(archWay_02)
 
-const stairFence_01 = new Entity()
-  const stairFenceShape = new GLTFShape('models/StairFence_01.glb')
-  stairFence_01.addComponentOrReplace(stairFenceShape)
-  const stairFenceLoc = new Transform({
-    position: new Vector3(32, 0, 41),
-    rotation: new Quaternion(0, 0, 0, 1),
-    scale: new Vector3(1, 1, 1)
-  })
-  stairFence_01.addComponentOrReplace(stairFenceLoc)
-  engine.addEntity(stairFence_01)
+// const stairFence_01 = new Entity()
+//   //const stairFenceShape = new GLTFShape('models/StairFence_01.glb')
+//   stairFence_01.addComponentOrReplace(resources.models.stairFence)
+//   const stairFenceLoc = new Transform({
+//     position: new Vector3(32, 0, 41),
+//     rotation: new Quaternion(0, 0, 0, 1),
+//     scale: new Vector3(1, 1, 1)
+//   })
+//   stairFence_01.addComponentOrReplace(stairFenceLoc)
+//   engine.addEntity(stairFence_01)
 
-  const stairFence_01a = new Entity()
-  stairFence_01a.addComponentOrReplace(stairFenceShape)
-  const stairFenceLoc1a = new Transform({
-    position: new Vector3(8, 1, 33),
-    rotation: new Quaternion(0, 0, 0, 1),
-    scale: new Vector3(1, 1, 1)
-  })
-  stairFence_01a.addComponentOrReplace(stairFenceLoc1a)
-  engine.addEntity(stairFence_01a)
+const stairFence_l02 = new Entity()
+stairFence_l02.addComponentOrReplace(resources.models.stairFence)
+const stairFenceLocl2 = new Transform({
+  position: new Vector3(32, 0, 41),
+  rotation: new Quaternion(0, 0, 0, 1),
+  scale: new Vector3(2, 1, 1)
+})
+stairFence_l02.addComponentOrReplace(stairFenceLocl2)
+engine.addEntity(stairFence_l02)
 
-  const stairFence_02 = new Entity()
-  stairFence_02.addComponentOrReplace(stairFenceShape)
-  const stairFenceLoc2 = new Transform({
-    position: new Vector3(8, 0, 41),
-    rotation: new Quaternion(0, 0, 0, 1),
-    scale: new Vector3(1, 1, 1)
-  })
-  stairFence_02.addComponentOrReplace(stairFenceLoc2)
-  engine.addEntity(stairFence_02)
 
+const wall_Stone_Largel1 = new Entity()
+wall_Stone_Largel1.addComponentOrReplace(resources.models.wallStoneLarge)
+const wallStoneLargeLocl1 = new Transform({
+  position: new Vector3(32, 0, 37),
+  rotation: Quaternion.Euler(0,90,0),
+  scale: new Vector3(.6, .85, 1)
+})
+wall_Stone_Largel1.addComponentOrReplace(wallStoneLargeLocl1)
+engine.addEntity(wall_Stone_Largel1)
+
+const stairFence_l01a = new Entity()
+stairFence_l01a.addComponentOrReplace(resources.models.stairFence)
+const stairFenceLocl1a = new Transform({
+  position: new Vector3(32, 0, 37),
+  rotation: new Quaternion(0, 0, 0, 1),
+  scale: new Vector3(1, 2, 1)
+})
+stairFence_l01a.addComponentOrReplace(stairFenceLocl1a)
+engine.addEntity(stairFence_l01a)
+
+const wall_Stone_Largel2 = new Entity()
+wall_Stone_Largel2.addComponentOrReplace(resources.models.wallStoneLarge)
+const wallStoneLargeLocl2 = new Transform({
+  position: new Vector3(32, 0, 32.9),
+  rotation: Quaternion.Euler(0,90,0),
+  scale: new Vector3(.65, 1.7, 1)
+})
+wall_Stone_Largel2.addComponentOrReplace(wallStoneLargeLocl2)
+engine.addEntity(wall_Stone_Largel2)
+
+const stairFence_l02a = new Entity()
+stairFence_l02a.addComponentOrReplace(resources.models.stairFence)
+const stairFenceLocl2a = new Transform({
+  position: new Vector3(32, 0, 33),
+  rotation: new Quaternion(0, 0, 0, 1),
+  scale: new Vector3(1, 3.8, 1)
+})
+stairFence_l02a.addComponentOrReplace(stairFenceLocl2a)
+engine.addEntity(stairFence_l02a)
+
+const wall_Stone_Largel3 = new Entity()
+wall_Stone_Largel3.addComponentOrReplace(resources.models.wallStoneLarge)
+const wallStoneLargeLocl3 = new Transform({
+  position: new Vector3(32, 0, 28.5),
+  rotation: Quaternion.Euler(0,90,0),
+  scale: new Vector3(.7, 3.2, 1)
+})
+wall_Stone_Largel3.addComponentOrReplace(wallStoneLargeLocl3)
+engine.addEntity(wall_Stone_Largel3)
+
+const stairFence_l03a = new Entity()
+stairFence_l03a.addComponentOrReplace(resources.models.stairFence)
+const stairFenceLocl3a = new Transform({
+  position: new Vector3(32, 0, 29),
+  rotation: new Quaternion(0, 0, 0, 1),
+  scale: new Vector3(1, 5.8, 1)
+})
+stairFence_l03a.addComponentOrReplace(stairFenceLocl3a)
+engine.addEntity(stairFence_l03a)
+
+const wall_Stone_Largel4 = new Entity()
+wall_Stone_Largel4.addComponentOrReplace(resources.models.wallStoneLarge)
+const wallStoneLargel4Loc = new Transform({
+  position: new Vector3(32, 0, 23),
+  rotation: Quaternion.Euler(0,90,0),
+  scale: new Vector3(1, 4.7, 1)
+})
+wall_Stone_Largel4.addComponentOrReplace(wallStoneLargel4Loc)
+engine.addEntity(wall_Stone_Largel4)
+
+const wall_Stone_Largel5 = new Entity()
+wall_Stone_Largel5.addComponentOrReplace(resources.models.wallStoneLarge)
+const wallStoneLargel5Loc = new Transform({
+  position: new Vector3(32, 0, 19),
+  rotation: Quaternion.Euler(0,90,0),
+  scale: new Vector3(1, 4.7, 1)
+})
+wall_Stone_Largel5.addComponentOrReplace(wallStoneLargel5Loc)
+engine.addEntity(wall_Stone_Largel5)
+
+const wall_Stone_Largel6 = new Entity()
+wall_Stone_Largel6.addComponentOrReplace(resources.models.wallStoneLarge)
+const wallStoneLargel6Loc = new Transform({
+  position: new Vector3(32, 0, 14),
+  rotation: Quaternion.Euler(0,90,0),
+  scale: new Vector3(1, 4.7, 1)
+})
+wall_Stone_Largel6.addComponentOrReplace(wallStoneLargel6Loc)
+engine.addEntity(wall_Stone_Largel6)
+
+const wall_Stone_Largel7 = new Entity()
+wall_Stone_Largel7.addComponentOrReplace(resources.models.wallStoneLarge)
+const wallStoneLargel7Loc = new Transform({
+  position: new Vector3(32, 0, 9),
+  rotation: Quaternion.Euler(0,90,0),
+  scale: new Vector3(1, 4.7, 1)
+})
+wall_Stone_Largel7.addComponentOrReplace(wallStoneLargel7Loc)
+engine.addEntity(wall_Stone_Largel7)
+
+const wall_Stone_Largel8 = new Entity()
+wall_Stone_Largel8.addComponentOrReplace(resources.models.wallStoneLarge)
+const wallStoneLargel8Loc = new Transform({
+  position: new Vector3(32, 0, 4),
+  rotation: Quaternion.Euler(0,90,0),
+  scale: new Vector3(1, 4.7, 1)
+})
+wall_Stone_Largel8.addComponentOrReplace(wallStoneLargel8Loc)
+engine.addEntity(wall_Stone_Largel8) 
+
+const wall_Stone_LargelBack1 = new Entity()
+wall_Stone_LargelBack1.addComponentOrReplace(resources.models.wallStoneLarge)
+const wallStoneLargelBack1Loc = new Transform({
+  position: new Vector3(32, 0, 3.9),
+  rotation: Quaternion.Euler(0,0,0),
+  scale: new Vector3(1, 4.7, 1)
+})
+wall_Stone_LargelBack1.addComponentOrReplace(wallStoneLargelBack1Loc)
+engine.addEntity(wall_Stone_LargelBack1) 
+
+const wall_Stone_LargelBack2 = new Entity()
+wall_Stone_LargelBack2.addComponentOrReplace(resources.models.wallStoneLarge)
+const wallStoneLargelBack2Loc = new Transform({
+  position: new Vector3(27, 0, 3.9),
+  rotation: Quaternion.Euler(0,0,0),
+  scale: new Vector3(1, 4.7, 1)
+})
+wall_Stone_LargelBack2.addComponentOrReplace(wallStoneLargelBack2Loc)
+engine.addEntity(wall_Stone_LargelBack2) 
+
+const wall_Stone_LargelBack3 = new Entity()
+wall_Stone_LargelBack3.addComponentOrReplace(resources.models.wallStoneLarge)
+const wallStoneLargelBack3Loc = new Transform({
+  position: new Vector3(22, 0, 3.9),
+  rotation: Quaternion.Euler(0,0,0),
+  scale: new Vector3(1, 4.7, 1)
+})
+wall_Stone_LargelBack3.addComponentOrReplace(wallStoneLargelBack3Loc)
+engine.addEntity(wall_Stone_LargelBack3) 
+
+const wall_Stone_LargelBack4 = new Entity()
+wall_Stone_LargelBack4.addComponentOrReplace(resources.models.wallStoneLarge)
+const wallStoneLargelBack4Loc = new Transform({
+  position: new Vector3(17, 0, 3.9),
+  rotation: Quaternion.Euler(0,0,0),
+  scale: new Vector3(1, 4.7, 1)
+})
+wall_Stone_LargelBack4.addComponentOrReplace(wallStoneLargelBack4Loc)
+engine.addEntity(wall_Stone_LargelBack4) 
+
+const wall_Stone_LargelBack5 = new Entity()
+wall_Stone_LargelBack5.addComponentOrReplace(resources.models.wallStoneLarge)
+const wallStoneLargelBack5Loc = new Transform({
+  position: new Vector3(13, 0, 3.9),
+  rotation: Quaternion.Euler(0,0,0),
+  scale: new Vector3(1, 4.7, 1)
+})
+wall_Stone_LargelBack5.addComponentOrReplace(wallStoneLargelBack5Loc)
+engine.addEntity(wall_Stone_LargelBack5) 
+
+  
 
   const hud: BuilderHUD = new BuilderHUD();
-  // hud.attachToEntity(stone_Blocks_01);
-  // hud.attachToEntity(stone_Blocks_End_01);
-  // hud.attachToEntity(wall_Stone_Large)
-  // hud.attachToEntity(wall_Stone_Small)
-  // hud.attachToEntity(wall_Stone_Medium)
-  hud.attachToEntity(stairFence_01a)
-  // hud.attachToEntity(module_Stair_Stones_5M)
+  //hud.attachToEntity(tree_Dead_01);
+  hud.attachToEntity(tree_Dead_02);
+  hud.attachToEntity(tree_Dead_03)
+  hud.attachToEntity(tree_Dead_04)
+  //hud.attachToEntity(wall_Stone_Large4)
+  //hud.attachToEntity(wall_Stone_Large3)
+  //hud.attachToEntity(module_Stair_Stones_5M)
   // hud.attachToEntity(module_Stair_Stones_1M)
   // hud.attachToEntity(module_Stair_Straight_1M)
   // hud.attachToEntity(module_Stair_Stones_3M)
