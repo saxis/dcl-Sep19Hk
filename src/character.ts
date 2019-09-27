@@ -49,6 +49,10 @@ goblin.addComponent(
   })
 );
 
+goblin.addComponent(
+  new AudioSource(resources.sounds.goblinHit)
+);
+
 //let goblinShape = new GLTFShape("models/ghoulBossWalking.glb");
 //let goblinShape = new GLTFShape("models/goblinAnimated3.glb");
 //let goblinShape = new GLTFShape('models/zombie_murderer/zombie_murderer/resized.gltf')
@@ -85,6 +89,8 @@ goblin.addComponent(
       deathFromFront.playing = false;
       //hitInFace.play()
       //hitInFace.looping = false
+
+      goblin.getComponent(AudioSource).playOnce();
 
       HIT_POINTS = HIT_POINTS - 1;
       log("hit points is now: ", HIT_POINTS);

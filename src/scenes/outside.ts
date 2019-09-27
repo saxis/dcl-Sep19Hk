@@ -1170,13 +1170,19 @@ const wallStoneLargelBack5Loc = new Transform({
 wall_Stone_LargelBack5.addComponentOrReplace(wallStoneLargelBack5Loc)
 engine.addEntity(wall_Stone_LargelBack5) 
 
+
+
+
   
 
-  const hud: BuilderHUD = new BuilderHUD();
-  //hud.attachToEntity(tree_Dead_01);
-  hud.attachToEntity(tree_Dead_02);
-  hud.attachToEntity(tree_Dead_03)
-  hud.attachToEntity(tree_Dead_04)
+  
+
+
+  // const hud: BuilderHUD = new BuilderHUD();
+  // hud.attachToEntity(stairsToFloor3);
+  // hud.attachToEntity(floor2Pillar);
+  // hud.attachToEntity(Wall_Stone_Small)
+  //hud.attachToEntity(tree_Dead_04)
   //hud.attachToEntity(wall_Stone_Large4)
   //hud.attachToEntity(wall_Stone_Large3)
   //hud.attachToEntity(module_Stair_Stones_5M)

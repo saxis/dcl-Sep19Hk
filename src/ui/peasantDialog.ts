@@ -1,5 +1,6 @@
 import resources from "../resources";
 import { SimpleDialog } from "../modules/simpleDialog";
+import { DoorState } from "../gameObjects/doorState";
 
 function selectRandom(options: string[]): string {
   return options[Math.floor(Math.random() * (options.length - 1))];
@@ -64,11 +65,47 @@ export class PeasantDialog extends SimpleDialog {
     let firstOptionCorrect = false;
     let secondOptionCorrect = false;
     let thirdOptionCorrect = false;
+    let unlockDoor = false;
 
     // Dialog text colors
     const npcColor = Color4.White();
     //const npcColor = Color4.Green();
     const playerColor = new Color4(0.898, 0, 0.157);
+
+    const bottomFloorDoor = new Entity();
+  //bottomFloorDoor.setParent(scene);
+  //const woodenDoorModel = new GLTFShape("models/Door_Wood_01/Door_Wood_01.glb");
+  bottomFloorDoor.addComponentOrReplace(resources.models.woodenDoor);
+  const firstFloorDoorLoc = new Transform({
+    position: new Vector3(0.5, 0, 0),
+    rotation: new Quaternion(0, 0, 0, 1)
+  });
+  bottomFloorDoor.addComponentOrReplace(firstFloorDoorLoc);
+  bottomFloorDoor.addComponent(
+    //new AudioSource(new AudioClip("sounds/GROBB.mp3"))
+    new AudioSource(resources.sounds.doorIsLocked)
+  );
+  engine.addEntity(bottomFloorDoor);
+
+  const bottomDoorPivot = new Entity();
+  bottomDoorPivot.addComponent(
+    new Transform({
+      position: new Vector3(19.7, 1.6, 19.42)
+    })
+  );
+  bottomDoorPivot.addComponent(new DoorState());
+  engine.addEntity(bottomDoorPivot);
+  bottomFloorDoor.setParent(bottomDoorPivot);
+  bottomFloorDoor.addComponent(
+    new OnClick(e => {
+      bottomFloorDoor.getComponent(AudioSource).playOnce();
+      if(unlockDoor) {
+        let state = bottomFloorDoor.getParent().getComponent(DoorState);
+        state.closed = !state.closed;
+      }
+    })
+  );
+ 
 
     this.dialogTree = new SimpleDialog.DialogTree()
       .if(() => firstTimeDialog)
@@ -79,10 +116,10 @@ export class PeasantDialog extends SimpleDialog {
             .say(() => "You say, \"What tower?\"", { color: playerColor })
           .endOption()
         .endOptionsGroup()
-        .say(() => "Old Man Rivers says, \"Yeah the creepy tower right over there. Anyway, I'm guarding the thing until someone comes along that can handle [matters].\"", { color: npcColor })
+        .say(() => "Old Man Rivers says, \"Yeah, the creepy tower right over there. Anyway, I'm guarding the thing until someone comes along that can handle [matters].\"", { color: npcColor })
         .beginOptionsGroup()
           .option(() => "What kind of matters?")
-            .say(() => "You say, \"What sort of matters, I might be able to help\"", { color: playerColor })
+            .say(() => "You say, \"What sort of matters? I might be able to help.\"", { color: playerColor })
           .endOption()
         .endOptionsGroup()
         .say(() => "Old Man Rivers says, \"An old sorceress lives in there. She's been doing.. bad things around these parts. I'm hoping to find someone [brave] enough to deal with her. Permanently.\"", { color: npcColor })
@@ -90,16 +127,40 @@ export class PeasantDialog extends SimpleDialog {
           .option(() => "I'm brave enough")
             .say(() => "You say, \"I'm brave enough\"", { color: playerColor })
             .say(() => "Old Man Rivers says, \"Finally.. gods be praised. I will unlock the door to the first floor. Hopefully you can make your way to the top and defeat her.  \"", { color: npcColor })
-            .call(() => {
+            .call(() => { bottomFloorDoor.getComponent(AudioSource).playOnce();})
+            .call( async () => {
                 log("Unlock the first floor door")
+                unlockDoor = true;
+                //await bottomFloorDoor.removeComponent(OnClick);
+                await bottomFloorDoor.removeComponent(AudioSource);
             })
+            .call(async () => {
+                log("in the second call")
+                await bottomFloorDoor.addComponent(
+                    new AudioSource(resources.sounds.grobb)
+                );
+                
+            })
+            // .call(async() => {
+            //     log("in the third call")
+            //     await bottomFloorDoor.addComponent(
+            //       new OnClick(e => {
+            //         log('a new onclick was added')
+            //         // let state = bottomFloorDoor.getParent().getComponent(DoorState);
+            //         // state.closed = !state.closed;
+            //         // bottomFloorDoor.getComponent(AudioSource).playOnce();
+            //       })
+            //     );
+            // })
           .endOption()
           .option(() => "Maybe some other time")
             .say(() => "Old Man Rivers says, \"Well, thanks anyway.. I need to get back to guarding. Pleasant day\"", { color: npcColor })
           .endOption()
         .endOptionsGroup()
       .else()
-        .say(() => "Old Man Rivers says, \"Did you gather your courage traveler?\"")
+        .if(() => !unlockDoor)
+          .say(() => "Old Man Rivers says, \"Did you gather your courage traveler?\"")
+        .endif()
       .endif()
      
     //     .say(
