@@ -6,13 +6,15 @@ export default {
         playerHit: new AudioClip("sounds/player_hit.mp"),
         doorIsLocked: new AudioClip("sounds/door_lock.mp3"),
         grobb: new AudioClip("sounds/GROBB.mp3"),
-        lava: new AudioClip("sounds/LAVASTOR.mp3")
+        lava: new AudioClip("sounds/LAVASTOR.mp3"),
+        fear: new AudioClip("sounds/FEARPLAN.mp3") 
     },
     models: {
         lanternLit: new GLTFShape('models/lantern_lit.glb'),
         blackStone: new GLTFShape('models/Stone_Module_4M/Stone_Module_4M.glb'),
         twoBladesOfGrassShape: new GLTFShape("models/Grass03.glb"),
         goblinShape: new GLTFShape("models/goblinAnimated3.glb"),
+        fighter: new GLTFShape("models/FighterLadyAnimated.glb"),
         openBook: new GLTFShape("models/Book_06/Book_06.glb"),
         //peasantGirl: new GLTFShape('models/peasantGirlAnimated.glb'),
         peasantGirl: new GLTFShape('models/peasantAnimated.glb'),
@@ -22,7 +24,15 @@ export default {
         woodenDoor: new GLTFShape("models/Door_Wood_01/Door_Wood_01.glb"),
         stairFence: new GLTFShape('models/StairFence_01.glb'),
         wallStoneLarge: new GLTFShape('models/Wall_Stone_Large.glb'),
-        outsideStairs: new GLTFShape('models/Module_Stair_Stones_3M/Module_Stair_Stones_3M.glb')
+        outsideStairs: new GLTFShape('models/Module_Stair_Stones_3M/Module_Stair_Stones_3M.glb'),
+        chairwood: new GLTFShape('models/floor2/Chairwood_02/Chairwood_02.glb'),
+        tablewood: new GLTFShape('models/floor2/TableWood_01/TableWood_01.glb'),
+        barrel: new GLTFShape('models/floor2/Barrel_01/Barrel_01.glb'),
+        barrel2: new GLTFShape('models/floor2/Barrel_02/Barrel_02.glb'),
+        plate: new GLTFShape('models/floor2/Plate_01/Plate_01.glb'),
+        fishskeleton: new GLTFShape('models/floor2/FishSkeleton_01/FishSkeleton_01.glb'),
+        bannerblue: new GLTFShape('models/floor2/Banner_Blue_02/Banner_Blue_02.glb'),
+        bannerred: new GLTFShape('models/floor2/Banner_Red_02/Banner_Red_02.glb')
     },
     textures: {
         textContainer: new Texture("src/images/dialogs/textContainer.png"),

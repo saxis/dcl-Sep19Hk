@@ -1171,12 +1171,19 @@ wall_Stone_LargelBack5.addComponentOrReplace(wallStoneLargelBack5Loc)
 engine.addEntity(wall_Stone_LargelBack5) 
 
 
-
+// const fishie = new Entity()
+// fishie.addComponent(resources.models.fishskeleton)
+// const fishieLoc = new Transform({
+//   position: new Vector3(10, 2.6, 23),
+//   rotation: Quaternion.Euler(90, 0, 90),
+//   scale: new Vector3(10, 1, 10)
+// })
+// fishie.addComponent(fishieLoc)
+// engine.addEntity(fishie) 
 
   
-
-  
-
+//const hud: BuilderHUD = new BuilderHUD();
+//hud.attachToEntity(fishie);
 
   // const hud: BuilderHUD = new BuilderHUD();
   // hud.attachToEntity(stairsToFloor3);
