@@ -1,4 +1,3 @@
-import { BuilderHUD } from "../modules/BuilderHUD";
 import { spawnEntity } from '../modules/SpawnerFunctions'
 import resources from '../resources';
 
@@ -35,9 +34,6 @@ export function CreateOutside(): void {
   engine.addEntity(tree_Dead_01b);
 
   
-
-
-
   const tree_Dead_02 = new Entity();
   const gltfShape_3 = new GLTFShape("models/Tree_Dead_02.glb");
   tree_Dead_02.addComponentOrReplace(gltfShape_3);
@@ -699,38 +695,7 @@ export function CreateOutside(): void {
   row12col12.addComponentOrReplace(resources.models.blackStone) 
 
 
-  // const stone_Blocks_01 = new Entity()
-  // const stoneBlocksShape01 = new GLTFShape('models/Stone_Blocks_01.glb')
-  // stone_Blocks_01.addComponentOrReplace(stoneBlocksShape01)
-  // const stoneBlocks01Loc = new Transform({
-  //   position: new Vector3(40, 0, 40),
-  //   rotation: new Quaternion(0, 0, 0, 1),
-  //   scale: new Vector3(1, 1, 1)
-  // })
-  // stone_Blocks_01.addComponentOrReplace(stoneBlocks01Loc)
-  // engine.addEntity(stone_Blocks_01)
   
-  // const stone_Blocks_End_01 = new Entity()
-  // const stoneBlocksEndShape01 = new GLTFShape('models/Stone_Blocks_End_01.glb')
-  // stone_Blocks_End_01.addComponentOrReplace(stoneBlocksEndShape01)
-  // const stoneBlocksEndLoc = new Transform({
-  //   position: new Vector3(42.5, 0, 42),
-  //   rotation: new Quaternion(0, 0, 0, 1),
-  //   scale: new Vector3(1, 1, 1)
-  // })
-  // stone_Blocks_End_01.addComponentOrReplace(stoneBlocksEndLoc)
-  // engine.addEntity(stone_Blocks_End_01)
-  
-  // const wall_Stone_Large = new Entity()
-  // const wallStoneLargeShape = new GLTFShape('models/Wall_Stone_Large.glb')
-  // wall_Stone_Large.addComponentOrReplace(wallStoneLargeShape)
-  // const wallStoneLargeLoc = new Transform({
-  //   position: new Vector3(32, 0, 35),
-  //   rotation: Quaternion.Euler(0,90,0),
-  //   scale: new Vector3(1, 1, 1)
-  // })
-  // wall_Stone_Large.addComponentOrReplace(wallStoneLargeLoc)
-  // engine.addEntity(wall_Stone_Large)
 
   const stairFence_02 = new Entity()
   stairFence_02.addComponentOrReplace(resources.models.stairFence)
@@ -853,151 +818,7 @@ export function CreateOutside(): void {
   wall_Stone_Large8.addComponentOrReplace(wallStoneLarge8Loc)
   engine.addEntity(wall_Stone_Large8)
   
-  // const wall_Stone_Small = new Entity()
-  // const wallStoneSmallShape = new GLTFShape('models/Wall_Stone_Small.glb')
-  // wall_Stone_Small.addComponentOrReplace(wallStoneSmallShape)
-  // const wallStoneSmallLoc = new Transform({
-  //   position: new Vector3(27, 0, 11.5),
-  //   rotation: new Quaternion(0, 0, 0, 1),
-  //   scale: new Vector3(1, 1, 1)
-  // })
-  // wall_Stone_Small.addComponentOrReplace(wallStoneSmallLoc)
-  // engine.addEntity(wall_Stone_Small)
   
-  // const wall_Stone_Medium = new Entity()
-  // const wallStoneMediumShape = new GLTFShape('models/Wall_Stone_Medium.glb')
-  //  wall_Stone_Medium.addComponentOrReplace(wallStoneMediumShape)
-  // const wallStoneMediumLoc = new Transform({
-  //   position: new Vector3(26.5, 0, 8.5),
-  //   rotation: new Quaternion(0, 0, 0, 1),
-  //   scale: new Vector3(1, 1, 1)
-  // })
-  // wall_Stone_Medium.addComponentOrReplace(wallStoneMediumLoc)
-  // engine.addEntity(wall_Stone_Medium)
-  
-  // const stone_Blocks_Curve_01 = new Entity()
-  // const stoneBlocksCurveShape = new GLTFShape('models/Stone_Blocks_Curve_01.glb')
-  // stone_Blocks_Curve_01.addComponentOrReplace(stoneBlocksCurveShape)
-  // const stoneBlocksCurveLoc = new Transform({
-  //   position: new Vector3(30, 0, 22.5),
-  //   rotation: new Quaternion(0, 0, 0, 1),
-  //   scale: new Vector3(1, 1, 1)
-  // })
-  // stone_Blocks_Curve_01.addComponentOrReplace(stoneBlocksCurveLoc)
-  // engine.addEntity(stone_Blocks_Curve_01)
-  
-  
-  
-  // const pillar_Top_Stones_Corner_01 = new Entity()
-  // const pillarTopStoneCornerShape = new GLTFShape('models/Pillar_Top_Stones_Corner_01.glb')
-  // pillar_Top_Stones_Corner_01.addComponentOrReplace(pillarTopStoneCornerShape)
-  // const pillarTopStonesCornerLoc = new Transform({
-  //   position: new Vector3(16.5, 0, 36.5),
-  //   rotation: new Quaternion(0, 0, 0, 1),
-  //   scale: new Vector3(1, 1, 1)
-  // })
-  // pillar_Top_Stones_Corner_01.addComponentOrReplace(pillarTopStonesCornerLoc)
-  // engine.addEntity(pillar_Top_Stones_Corner_01)
-  
-  // const pillar_Top_Stones_Big_01 = new Entity()
-  // const pillarTopStoneBigShape = new GLTFShape('models/Pillar_Top_Stones_Big_01.glb')
-  // pillar_Top_Stones_Big_01.addComponentOrReplace(pillarTopStoneBigShape)
-  // const pillarTopStonesLoc = new Transform({
-  //   position: new Vector3(17.5,3,36),
-  //   rotation: new Quaternion(0, 0, 0, 1),
-  //   scale: new Vector3(1, 1, 1)
-  // })
-  // pillar_Top_Stones_Big_01.addComponentOrReplace(pillarTopStonesLoc)
-  // engine.addEntity(pillar_Top_Stones_Big_01)
-  
-  // const pillar_Quad_Half_01 = new Entity()
-  // const pillarQuadHalfShape = new GLTFShape('models/Pillar_Quad_Half_01.glb')
-  // pillar_Quad_Half_01.addComponentOrReplace(pillarQuadHalfShape)
-  // const pillarQuadHalfLoc = new Transform({
-  //   position: new Vector3(20.5, 0, 38),
-  //   rotation: new Quaternion(0, 0, 0, 1),
-  //   scale: new Vector3(1, 1, 1)
-  // })
-  // pillar_Quad_Half_01.addComponentOrReplace(pillarQuadHalfLoc)
-  // engine.addEntity(pillar_Quad_Half_01)
-  
-  // const pillar_Quad_Full_01 = new Entity()
-  // const pillarQuadFullShape = new GLTFShape('models/Pillar_Quad_Full_01.glb')
-  // pillar_Quad_Full_01.addComponentOrReplace(pillarQuadFullShape)
-  // const pillarQuadFullLoc = new Transform({
-  //   position: new Vector3(18, 0, 39),
-  //   rotation: new Quaternion(0, 0, 0, 1),
-  //   scale: new Vector3(1, 1, 1)
-  // })
-  // pillar_Quad_Full_01.addComponentOrReplace(pillarQuadFullLoc)
-  // engine.addEntity(pillar_Quad_Full_01)
-  
-  // const module_Stair_Stones_5M = new Entity()
-  // const moduleStairStones5MShape = new GLTFShape('models/Module_Stair_Stones_5M.glb')
-  // module_Stair_Stones_5M.addComponentOrReplace(moduleStairStones5MShape)
-  // const moduleStairStone5MLoc = new Transform({
-  //   position: new Vector3(40, 0, 35.5),
-  //   rotation: new Quaternion(0, 0, 0, 1),
-  //   scale: new Vector3(1, 1, 1)
-  // })
-  // module_Stair_Stones_5M.addComponentOrReplace(moduleStairStone5MLoc)
-  // engine.addEntity(module_Stair_Stones_5M)
-  
-  // const module_Stair_Straight_1M = new Entity()
-  // const moduleStairStraight1MShape = new GLTFShape('models/Module_Stair_Straight_1M.glb')
-  // module_Stair_Straight_1M.addComponentOrReplace(moduleStairStraight1MShape)
-  // const moduleStairStraight1MLoc = new Transform({
-  //   position: new Vector3(43, 0, 38.5),
-  //   rotation: new Quaternion(0, 0, 0, 1),
-  //   scale: new Vector3(1, 1, 1)
-  // })
-  // module_Stair_Straight_1M.addComponentOrReplace(moduleStairStraight1MLoc)
-  // engine.addEntity(module_Stair_Straight_1M)
-  
-  // const module_Stair_Stones_1M = new Entity()
-  // const moduleStairStones1MShape = new GLTFShape('models/Module_Stair_Stones_1M.glb')
-  // module_Stair_Stones_1M.addComponentOrReplace(moduleStairStones1MShape)
-  // const moduleStairStone1MLoc = new Transform({
-  //   position: new Vector3(38, 0, 39),
-  //   rotation: new Quaternion(0, 0, 0, 1),
-  //   scale: new Vector3(1, 1, 1)
-  // })
-  // module_Stair_Stones_1M.addComponentOrReplace(moduleStairStone1MLoc)
-  // engine.addEntity(module_Stair_Stones_1M)
-  
-  // const module_Stair_Stones_3M = new Entity()
-  // const moduleStairStones3MShape = new GLTFShape('models/Module_Stair_Stones_3M.glb')
-  // module_Stair_Stones_3M.addComponentOrReplace(moduleStairStones3MShape)
-  // const moduleStairStones3MLoc = new Transform({
-  //   position: new Vector3(37.5, 0, 34.5),
-  //   rotation: new Quaternion(0, 0, 0, 1),
-  //   scale: new Vector3(1, 1, 1)
-  // })
-  // module_Stair_Stones_3M.addComponentOrReplace(moduleStairStones3MLoc)
-  // engine.addEntity(module_Stair_Stones_3M)
-
-
-// const archWay_02 = new Entity()
-// const gltfShape_26 = new GLTFShape('models/ArchWay_02/ArchWay_02.glb')
-// archWay_02.addComponentOrReplace(gltfShape_26)
-// const transform_30 = new Transform({
-//   position: new Vector3(20, 0, 23),
-//   rotation: new Quaternion(0, 0, 0, 1),
-//   scale: new Vector3(1, 1, 1)
-// })
-// archWay_02.addComponentOrReplace(transform_30)
-// engine.addEntity(archWay_02)
-
-// const stairFence_01 = new Entity()
-//   //const stairFenceShape = new GLTFShape('models/StairFence_01.glb')
-//   stairFence_01.addComponentOrReplace(resources.models.stairFence)
-//   const stairFenceLoc = new Transform({
-//     position: new Vector3(32, 0, 41),
-//     rotation: new Quaternion(0, 0, 0, 1),
-//     scale: new Vector3(1, 1, 1)
-//   })
-//   stairFence_01.addComponentOrReplace(stairFenceLoc)
-//   engine.addEntity(stairFence_01)
 
 const stairFence_l02 = new Entity()
 stairFence_l02.addComponentOrReplace(resources.models.stairFence)
@@ -1125,7 +946,7 @@ wall_Stone_LargelBack1.addComponentOrReplace(resources.models.wallStoneLarge)
 const wallStoneLargelBack1Loc = new Transform({
   position: new Vector3(32, 0, 3.9),
   rotation: Quaternion.Euler(0,0,0),
-  scale: new Vector3(1, 4.7, 1)
+  scale: new Vector3(1, 4.7, 1.6)
 })
 wall_Stone_LargelBack1.addComponentOrReplace(wallStoneLargelBack1Loc)
 engine.addEntity(wall_Stone_LargelBack1) 
@@ -1163,37 +984,11 @@ engine.addEntity(wall_Stone_LargelBack4)
 const wall_Stone_LargelBack5 = new Entity()
 wall_Stone_LargelBack5.addComponentOrReplace(resources.models.wallStoneLarge)
 const wallStoneLargelBack5Loc = new Transform({
-  position: new Vector3(13, 0, 3.9),
+  position: new Vector3(12.9, 0, 3.9),
   rotation: Quaternion.Euler(0,0,0),
-  scale: new Vector3(1, 4.7, 1)
+  scale: new Vector3(1, 4.7, 1.6)
 })
 wall_Stone_LargelBack5.addComponentOrReplace(wallStoneLargelBack5Loc)
 engine.addEntity(wall_Stone_LargelBack5) 
 
-
-// const fishie = new Entity()
-// fishie.addComponent(resources.models.fishskeleton)
-// const fishieLoc = new Transform({
-//   position: new Vector3(10, 2.6, 23),
-//   rotation: Quaternion.Euler(90, 0, 90),
-//   scale: new Vector3(10, 1, 10)
-// })
-// fishie.addComponent(fishieLoc)
-// engine.addEntity(fishie) 
-
-  
-//const hud: BuilderHUD = new BuilderHUD();
-//hud.attachToEntity(fishie);
-
-  // const hud: BuilderHUD = new BuilderHUD();
-  // hud.attachToEntity(stairsToFloor3);
-  // hud.attachToEntity(floor2Pillar);
-  // hud.attachToEntity(Wall_Stone_Small)
-  //hud.attachToEntity(tree_Dead_04)
-  //hud.attachToEntity(wall_Stone_Large4)
-  //hud.attachToEntity(wall_Stone_Large3)
-  //hud.attachToEntity(module_Stair_Stones_5M)
-  // hud.attachToEntity(module_Stair_Stones_1M)
-  // hud.attachToEntity(module_Stair_Straight_1M)
-  // hud.attachToEntity(module_Stair_Stones_3M)
 }

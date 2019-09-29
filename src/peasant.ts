@@ -1,13 +1,5 @@
-//import { BuilderHUD } from "./modules/BuilderHUD";
-//import utils from "../node_modules/decentraland-ecs-utils/index";
-//import { MovableEntity } from "./gameObjects/movableEntity";
 import resources from "./resources";
-import { PeasantDialog } from './ui/index';
-
-// export function CreatePeasant(gameCanvas: UICanvas):void {
-
-
-// }
+import { PeasantDialog } from "./ui/index";
 
 const gameCanvas = new UICanvas();
 
@@ -20,9 +12,8 @@ const point5 = new Vector3(3, 0, 45);
 
 const path: Vector3[] = [point1, point2, point3, point4, point5];
 const TURN_TIME = 0.9;
-const HIT_TIME = 1.0;
-let HIT_POINTS = 5;
 let dead = false;
+let pause = true;
 
 @Component("timeOut")
 export class TimeOut {
@@ -46,36 +37,49 @@ export class LerpData {
 let peasantGirl = new Entity();
 peasantGirl.addComponent(
   new Transform({
-    position: new Vector3(30, 0, 30)
+    position: new Vector3(46, 0, 45)
   })
 );
 
-peasantGirl.addComponent(resources.models.peasantGirl);
+peasantGirl.addComponent(resources.models.peasant);
 
 let peasantGirlAnimator = new Animator();
 peasantGirl.addComponent(peasantGirlAnimator);
 
 //Add walk animation
-const walkClip = new AnimationState('walk')
-//const walkClip = new AnimationState("slowWalking");
-//const walkClip = new AnimationState("walkingInPlace");
+const walkClip = new AnimationState("walk");
 peasantGirlAnimator.addClip(walkClip);
 const turnRClip = new AnimationState("turnLeft");
 turnRClip.looping = false;
 peasantGirlAnimator.addClip(turnRClip);
 const raiseDeadClip = new AnimationState("talking");
 peasantGirlAnimator.addClip(raiseDeadClip);
+peasantGirl.addComponent(new AudioSource(resources.sounds.peasantunlock));
+const unlockSpell = new AnimationState("unlockSpell");
+peasantGirlAnimator.addClip(unlockSpell);
+const salute = new AnimationState("salute");
+peasantGirlAnimator.addClip(salute);
 
 peasantGirl.addComponent(new LerpData());
 
-const dialog = new PeasantDialog(gameCanvas)
+const dialog = new PeasantDialog(gameCanvas);
 
 peasantGirl.addComponent(
   new OnClick((): void => {
-    log("peasantGirl was clicked");
     dialog.run();
   })
 );
+
+dialog.onSequenceComplete = () => {
+  walkClip.pause()
+  log("in onSequenceCompleted")
+  log("trying to play unlock Spell animation")
+  unlockSpell.play()
+  unlockSpell.looping = false;
+  log("trying to play salute animation")
+  salute.play();
+  salute.looping = false;
+};
 
 engine.addEntity(peasantGirl);
 walkClip.play();

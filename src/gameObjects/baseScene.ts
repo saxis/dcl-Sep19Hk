@@ -5,7 +5,6 @@ export class BaseScene extends Entity {
         engine.addEntity(this)
         const tower = new Entity()
         tower.setParent(this)
-        //const gltfShape = new GLTFShape('models/skeletontower15.glb')
         const gltfShape = new GLTFShape('models/skeletontower16.glb')
         tower.addComponentOrReplace(gltfShape)
         const transform_2 = new Transform({

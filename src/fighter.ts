@@ -15,6 +15,24 @@ const HIT_TIME = 1.0;
 let HIT_POINTS = 5;
 let PLAYER_HP = 10;
 let dead = false;
+let clicked = false;
+
+function resolveAfter2Seconds() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve("resolved");
+    }, 2000);
+  });
+}
+
+async function asyncCall() {
+  log("calling");
+  var result = await resolveAfter2Seconds();
+  clicked = false;
+  log("clicked is false");
+  log(result);
+  // expected output: 'resolved'
+}
 
 @Component("timeOut")
 export class TimeOut {
@@ -49,32 +67,27 @@ fighter.addComponent(
   })
 );
 
-fighter.addComponent(
-  new AudioSource(resources.sounds.goblinHit)
-);
+fighter.addComponent(new AudioSource(resources.sounds.fighterhit));
 
-//let goblinShape = new GLTFShape("models/ghoulBossWalking.glb");
-//let goblinShape = new GLTFShape("models/goblinAnimated3.glb");
-//let goblinShape = new GLTFShape('models/zombie_murderer/zombie_murderer/resized.gltf')
-
-fighter.addComponent(resources.models.fighter);
+fighter.addComponent(resources.models.brute);
 
 let fighterAnimator = new Animator();
 fighter.addComponent(fighterAnimator);
 
 //Add walk animation
-const walkClip = new AnimationState('walk')
-//const walkClip = new AnimationState("walkingInPlace");
+const walkClip = new AnimationState("walk");
 fighterAnimator.addClip(walkClip);
 const turnRClip = new AnimationState("turnRight");
 turnRClip.looping = false;
 fighterAnimator.addClip(turnRClip);
-const swipeAttack = new AnimationState("swipeAttack");
-fighterAnimator.addClip(swipeAttack);
-const hitInFace = new AnimationState("hitInFace");
+const spinAttack = new AnimationState("swipeAttack");
+fighterAnimator.addClip(spinAttack);
+const hitInFace = new AnimationState("hitInHead");
 fighterAnimator.addClip(hitInFace);
 const deathFromFront = new AnimationState("deathFromFront");
 fighterAnimator.addClip(deathFromFront);
+const taunt = new AnimationState("taunt");
+fighterAnimator.addClip(taunt);
 
 fighter.addComponent(new LerpData());
 
@@ -82,14 +95,17 @@ fighter.addComponent(
   new OnClick((): void => {
     if (!dead) {
       log("fighter was clicked");
-      fighter.addComponent(new TimeOut(HIT_TIME));
+      clicked = true;
+
+      asyncCall();
+      //fighter.addComponent(new TimeOut(HIT_TIME));
+      spinAttack.stop();
+      hitInFace.play();
       walkClip.playing = false;
-      swipeAttack.playing = false;
+      spinAttack.playing = false;
       turnRClip.playing = false;
       deathFromFront.playing = false;
-      //hitInFace.play()
-      //hitInFace.looping = false
-
+      hitInFace.looping = false;
       fighter.getComponent(AudioSource).playOnce();
 
       HIT_POINTS = HIT_POINTS - 1;
@@ -97,41 +113,28 @@ fighter.addComponent(
 
       if (HIT_POINTS == 0) {
         log("play death animation");
+        spinAttack.stop();
+        hitInFace.stop();
+        walkClip.stop();
         dead = true;
-        deathFromFront.playing = true;
+        deathFromFront.play();
+        //deathFromFront.playing = true;
         deathFromFront.looping = false;
         lantern_lit3.getComponent(utils.ToggleComponent).toggle();
       }
 
-      if (dead == false && hitInFace.playing == false) {
-        log("play hit in face looping false");
-        hitInFace.reset();
-        //hitInFace.playing = true;
-        hitInFace.play();
-        hitInFace.looping = false;
-      }
+      //   if (dead == false && hitInFace.playing == false) {
+      //     log("play hit in face looping false");
+      //     hitInFace.reset();
+      //     //hitInFace.playing = true;
+      //     hitInFace.play();
+      //     hitInFace.looping = false;
+      //   }
     } else {
       log("grab the key from the corpse");
     }
   })
 );
-
-// const book1 = new Entity();
-// engine.addEntity(book1);
-// book1.addComponent(resources.models.openBook);
-// book1.addComponent(
-//   new Transform({
-//     position: new Vector3(13.8, 2.6, 8.2),
-//     rotation: Quaternion.Euler(0, 90, 0)
-//   })
-// );
-// book1.addComponent(
-//   new OnClick((): void => {
-//     log("book clicked");
-
-    
-//   })
-// );
 
 engine.addEntity(fighter);
 walkClip.play();
@@ -139,7 +142,7 @@ walkClip.play();
 // Walk System
 export class GnarkWalk {
   update(dt: number) {
-    if (!fighter.hasComponent(TimeOut) && !swipeAttack.playing && !dead) {
+    if (!fighter.hasComponent(TimeOut) && !spinAttack.playing && !dead) {
       let transform = fighter.getComponent(Transform);
       let path = fighter.getComponent(LerpData);
       walkClip.playing = true;
@@ -193,24 +196,25 @@ export class BattleCry {
     let path = fighter.getComponent(LerpData);
     let dist = distance(transform.position, camera.position);
     if (dist < 16) {
-      if (!dead) {
-        if (swipeAttack.playing == false) {
-          swipeAttack.reset();
-          swipeAttack.playing = true;
+      if (!dead && !clicked) {
+        if (spinAttack.playing == false) {
+          spinAttack.reset();
+          spinAttack.play();
+          spinAttack.playing = true;
           walkClip.playing = false;
           turnRClip.playing = false;
           hitInFace.playing = false;
           PLAYER_HP--;
-          log('PLAYER HP is now: ', PLAYER_HP)
-          if(PLAYER_HP == 0) {
-            log('play dead music.. Kick player out of the scene')
+          log("PLAYER HP is now: ", PLAYER_HP);
+          if (PLAYER_HP == 0) {
+            log("play dead music.. Kick player out of the scene");
           }
         }
       }
-      let playerPos = new Vector3(camera.position.x, 0, camera.position.z);
+      let playerPos = new Vector3(camera.position.x, 5.6, camera.position.z);
       transform.lookAt(playerPos);
-    } else if (swipeAttack.playing) {
-      swipeAttack.stop();
+    } else if (spinAttack.playing) {
+      spinAttack.stop();
       transform.lookAt(path.array[path.target]);
     }
   }
