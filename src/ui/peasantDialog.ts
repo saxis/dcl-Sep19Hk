@@ -160,6 +160,39 @@ export class PeasantDialog extends SimpleDialog {
       .else()
       .if(() => !unlockDoor)
       .say(() => 'Old Man Rivers says, "Did you gather your courage traveler?"')
+      .beginOptionsGroup()
+      .option(() => "I'm ready to face the tower!")
+      .say(() => 'You say, "I\'m ready"', { color: playerColor })
+      .say(
+        () =>
+          'Old Man Rivers says, "Fair enough. I will unlock the door to the first floor. Hopefully you can make your way to the top and defeat her."',
+        { color: npcColor }
+      )
+      .call(() => {
+        bottomFloorDoor.getComponent(AudioSource).playOnce();
+      })
+      .call(() => this.onSequenceComplete())
+      .call(async () => {
+        log("Unlock the first floor door and remove the magic sound");
+        unlockDoor = true;
+        await bottomFloorDoor.removeComponent(AudioSource);
+      })
+      .call(async () => {
+        log("in the second call to add the grobb sound back to the door");
+        await bottomFloorDoor.addComponent(
+          new AudioSource(resources.sounds.grobb)
+        );
+      })
+      .endOption()
+
+      .option(() => "Not just yet...")
+      .say(
+        () =>
+          'Old Man Rivers says, "I understand. Not many have the necessary grit. I need to get back to guarding. Pleasant day"',
+        { color: npcColor }
+      )
+      .endOption()
+      .endOptionsGroup()
       .else()
       .say(() => 'Old Man Rivers says, "The tower is unlocked. Best of luck."')
       .endif()

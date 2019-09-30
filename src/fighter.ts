@@ -120,7 +120,7 @@ fighter.addComponent(
         deathFromFront.play();
         //deathFromFront.playing = true;
         deathFromFront.looping = false;
-        lantern_lit3.getComponent(utils.ToggleComponent).toggle();
+        //lantern_lit3.getComponent(utils.ToggleComponent).toggle();
       }
 
       //   if (dead == false && hitInFace.playing == false) {

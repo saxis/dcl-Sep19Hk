@@ -1,6 +1,8 @@
 import utils from "../node_modules/decentraland-ecs-utils/index";
 import { MovableEntity } from "./gameObjects/movableEntity";
 import resources from "./resources";
+import { RotatableEntity } from "./gameObjects/rotatableEntity";
+//import { BuilderHUD } from "./modules/BuilderHUD";
 
 let redremoved = false;
 let yellowremoved = false;
@@ -10,13 +12,6 @@ let puzzlesolved = false;
 let firstpasscompleted = false;
 let secondpasscompleted = false;
 
-//model stuff
-// const point1 = new Vector3(24, 9.6, 5.5);
-// const point2 = new Vector3(12, 9.6, 5.5);
-// const point3 = new Vector3(12, 9.6, 17.5);
-// const point4 = new Vector3(24, 9.6, 17.5);
-
-// const path: Vector3[] = [point1, point2, point3, point4];
 const TURN_TIME = 0.9;
 const HIT_TIME = 1.0;
 let HIT_POINTS = 5;
@@ -48,6 +43,34 @@ export class TimeOut {
 
 export const paused = engine.getComponentGroup(TimeOut);
 
+const chest_Base_Iron_01 = new Entity();
+  const gltfShape_11 = new GLTFShape(
+    "models/Chest_Base_Iron_01/Chest_Base_Iron_01.glb"
+  );
+  chest_Base_Iron_01.addComponentOrReplace(gltfShape_11);
+  const transform_15 = new Transform({
+    position: new Vector3(17.5, 9.7, 6.2),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1, 1, 1)
+  });
+  chest_Base_Iron_01.addComponentOrReplace(transform_15);
+  engine.addEntity(chest_Base_Iron_01);
+
+  const ironChestTop = new RotatableEntity(
+    resources.models.ironChestTop,
+    new Transform({
+      position: new Vector3(17.5, 9.7, 6.2),
+      rotation: new Quaternion(0, 0, 0, 1)
+    }),
+    resources.sounds.moveObject1,
+    Quaternion.Euler(-80, 127, 0)
+  );
+  ironChestTop.addComponent(
+    new OnClick((): void => {
+      ironChestTop.getComponent(utils.ToggleComponent).toggle();
+    })
+  );
+
 const stone_Pedestal_01 = new Entity();
   const gltfShape_3 = new GLTFShape(
     "models/floor3/Stone_Pedestal_01/Stone_Pedestal_01.glb"
@@ -73,6 +96,7 @@ const lightbluecrystal = new Entity();
 const gltfShape_4 = new GLTFShape("models/floor3/Crystal_03/Crystal_03.glb");
 engine.addEntity(lightbluecrystal);
 lightbluecrystal.addComponentOrReplace(gltfShape_4);
+lightbluecrystal.addComponent(new AudioSource(resources.sounds.peasantunlock))
 const transform_8 = new Transform({
   position: new Vector3(23.5, 9.6, 7),
   rotation: new Quaternion(0, 0, 0, 1),
@@ -84,6 +108,7 @@ lightbluecrystal.addComponent(
     log("crystal 03 was clicked");
     engine.removeEntity(lightbluecrystal);
     lightblueremoved = true;
+    lightbluecrystal.getComponent(AudioSource).playOnce()
   })
 );
 
@@ -91,6 +116,7 @@ const yellowcrystal = new Entity();
 const gltfShape_5 = new GLTFShape("models/floor3/Crystal_05/Crystal_05.glb");
 engine.addEntity(yellowcrystal);
 yellowcrystal.addComponentOrReplace(gltfShape_5);
+yellowcrystal.addComponent(new AudioSource(resources.sounds.unlocksorceress))
 const transform_9 = new Transform({
   position: new Vector3(23.5, 9.6, 17),
   rotation: new Quaternion(0, 0, 0, 1),
@@ -100,8 +126,10 @@ yellowcrystal.addComponentOrReplace(transform_9);
 yellowcrystal.addComponent(
   new OnClick((): void => {
     log("yellow crystal was clicked, remove light blue stone");
-    engine.removeEntity(yellowcrystal);
+    yellowcrystal.getComponent(AudioSource).playOnce()
+    //engine.removeEntity(yellowcrystal);
     yellowremoved = true;
+    
   })
 );
 
@@ -109,6 +137,7 @@ const bluecrystal = new Entity();
 const gltfShape_6 = new GLTFShape("models/floor3/Crystal_01/Crystal_01.glb");
 engine.addEntity(bluecrystal);
 bluecrystal.addComponentOrReplace(gltfShape_6);
+bluecrystal.addComponent(new AudioSource(resources.sounds.peasantunlock))
 const transform_10 = new Transform({
   position: new Vector3(13, 9.6, 7),
   rotation: new Quaternion(0, 0, 0, 1),
@@ -118,12 +147,13 @@ bluecrystal.addComponentOrReplace(transform_10);
 bluecrystal.addComponent(
   new OnClick((): void => {
     log("blue crystal was clicked");
-    engine.removeEntity(yellowcrystal);
+    //engine.removeEntity(yellowcrystal);
     engine.addEntity(lightbluecrystal);
-    engine.removeEntity(bluecrystal);
+    //engine.removeEntity(bluecrystal);
     yellowremoved = true;
     blueremoved = true;
     lightblueremoved = false;
+    bluecrystal.getComponent(AudioSource).playOnce()
   })
 );
 
@@ -142,21 +172,13 @@ redcrystal.addComponent(
   new OnClick((): void => {
     log("red crystal was clicked");
     redcrystal.getComponent(AudioSource).playOnce()
-    engine.removeEntity(lightbluecrystal);
-    engine.removeEntity(redcrystal);
+    //engine.removeEntity(lightbluecrystal);
+    //engine.removeEntity(redcrystal);
     lightblueremoved = true;
     redremoved = true;
   })
 );
 
-// LerpData component
-// @Component("lerpData")
-// export class LerpData {
-//   array: Vector3[] = path;
-//   origin: number = 0;
-//   target: number = 1;
-//   fraction: number = 0;
-// }
 
 let sorceress = new Entity();
 sorceress.addComponent(
@@ -228,22 +250,34 @@ sorceress.addComponent(
           firstpasscompleted = true;
         }
 
+        if(HIT_POINTS == 2 && !secondpasscompleted) {
+          engine.addEntity(redcrystal);
+          engine.addEntity(bluecrystal);
+          engine.addEntity(yellowcrystal);
+        }
+
         if (HIT_POINTS == 0) {
           log("play death animation");
           dead = true;
-          deathFromFront.playing = true;
+          walkClip.stop()
+          turnRClip.stop()
+          hitInFace.stop()
+          spellAttack1.stop()
+          spellAttack2.stop()
+          deathFromFront.play()
+          //deathFromFront.playing = true;
           deathFromFront.looping = false;
           stone_Pedestal_01.getComponent(AudioSource).playOnce()
           //lantern_lit3.getComponent(utils.ToggleComponent).toggle();
         }
 
-        if (dead == false && hitInFace.playing == false) {
-          log("play hit in face looping false");
-          hitInFace.reset();
-          //hitInFace.playing = true;
-          hitInFace.play();
-          hitInFace.looping = false;
-        }
+        // if (dead == false && hitInFace.playing == false) {
+        //   log("play hit in face looping false");
+        //   hitInFace.reset();
+        //   //hitInFace.playing = true;
+        //   hitInFace.play();
+        //   hitInFace.looping = false;
+        // }
       } else {
         sorceress.getComponent(AudioSource).playOnce();
       }
@@ -369,3 +403,7 @@ function distance(pos1: Vector3, pos2: Vector3): number {
   const b = pos1.z - pos2.z;
   return a * a + b * b;
 }
+
+
+//const hud: BuilderHUD = new BuilderHUD();
+//hud.attachToEntity(chest_Base_Iron_01)

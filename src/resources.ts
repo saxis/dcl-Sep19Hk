@@ -17,12 +17,12 @@ export default {
         button: new AudioClip("sounds/button.mp3")
     },
     models: {
-        spicebag1: new GLTFShape("models/Spicesbag_01/Spicesbag_01.glb"),
-        spicebag2: new GLTFShape("models/Spicesbag_02/Spicesbag_02.glb"),
-        spicebag3: new GLTFShape("models/Spicesbag_03/Spicesbag_03.glb"),
+        spicebag1: new GLTFShape("models/floor2/Spicesbag_01/Spicesbag_01.glb"),
+        spicebag2: new GLTFShape("models/floor2/Spicesbag_02/Spicesbag_02.glb"),
+        spicebag3: new GLTFShape("models/floor2/Spicesbag_03/Spicesbag_03.glb"),
         longcrate: new GLTFShape("models/CrateLong_02/CrateLong_02.glb"),
         stairs: new GLTFShape("models/Stairs_L_01/Stairs_L_01.glb"),
-        orcchair: new GLTFShape("models/orc_chair.glb"),
+        // orcchair: new GLTFShape("models/orc_chair.glb"),
         lanternLit: new GLTFShape('models/lantern_lit.glb'),
         ironChestTop: new GLTFShape('models/Chest_Top_Iron_01/Chest_Top_Iron_01.glb'),
         blackStone: new GLTFShape('models/Stone_Module_4M/Stone_Module_4M.glb'),
@@ -56,24 +56,24 @@ export default {
     textures: {
         textContainer: new Texture("src/images/dialogs/textContainer.png"),
         optionsContainer: new Texture("src/images/dialogs/optionsContainer.png"),
-        playerPortraitDefault: new Texture("src/images/dialogs/player_default.png", {
-          hasAlpha: true
-        }),
-        playerPortraitSurprised: new Texture(
-          "src/images/dialogs/player_surprised.png",
-          { hasAlpha: true }
-        ),
-        playerPortraitThinking: new Texture("src/images/dialogs/player_thinking.png", {
-          hasAlpha: true
-        }),
-        npcPortraitDefault: new Texture("src/images/dialogs/dog_default.png", {
-          hasAlpha: true
-        }),
-        npcPortraitSurprised: new Texture("src/images/dialogs/dog_surprised.png", {
-          hasAlpha: true
-        }),
-        npcPortraitThinking: new Texture("src/images/dialogs/dog_thinking.png", {
-          hasAlpha: true
-        })
+        // playerPortraitDefault: new Texture("src/images/dialogs/player_default.png", {
+        //   hasAlpha: true
+        // }),
+        // playerPortraitSurprised: new Texture(
+        //   "src/images/dialogs/player_surprised.png",
+        //   { hasAlpha: true }
+        // ),
+        // playerPortraitThinking: new Texture("src/images/dialogs/player_thinking.png", {
+        //   hasAlpha: true
+        // }),
+        // npcPortraitDefault: new Texture("src/images/dialogs/dog_default.png", {
+        //   hasAlpha: true
+        // }),
+        // npcPortraitSurprised: new Texture("src/images/dialogs/dog_surprised.png", {
+        //   hasAlpha: true
+        // }),
+        // npcPortraitThinking: new Texture("src/images/dialogs/dog_thinking.png", {
+        //   hasAlpha: true
+        // })
       }
 }

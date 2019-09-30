@@ -1,15 +1,27 @@
-import { BuilderHUD } from "./modules/BuilderHUD";
 import utils from "../node_modules/decentraland-ecs-utils/index";
 import { MovableEntity } from "./gameObjects/movableEntity";
 import resources from "./resources";
 
 //model stuff
-const point1 = new Vector3(24, 1.6, 5.5);
-const point2 = new Vector3(12, 1.6, 5.5);
-const point3 = new Vector3(12, 1.6, 17.5);
-const point4 = new Vector3(24, 1.6, 17.5);
+// const point1 = new Vector3(24, 1.6, 5.5);
+// const point2 = new Vector3(12, 1.6, 5.5);
+// const point3 = new Vector3(12, 1.6, 17.5);
+// const point4 = new Vector3(24, 1.6, 17.5);
 
-const path: Vector3[] = [point1, point2, point3, point4];
+// const path: Vector3[] = [point1, point2, point3, point4];
+const point1 = new Vector3(23.8, 1.6, 6.2)
+const point2 = new Vector3(16.8, 1.6, 6.2)
+const point3 = new Vector3(16.8, 1.6, 6.2)
+const point4 = new Vector3(12.8, 1.6, 10.2)
+const point5 = new Vector3(12.8, 1.6, 12.2)
+const point6 = new Vector3(19.8, 1.6, 12.2)
+const point7 = new Vector3(19.8, 1.6, 15.2)
+const point8 = new Vector3(12.8, 1.6, 15.2)
+const point9 = new Vector3(12.8, 1.6, 17.2)
+const point10 = new Vector3(23.8, 1.6, 17.2)
+
+const path: Vector3[] = [point1, point2, point3, point4, point5, point6, point7, point8, point9, point10]
+
 const TURN_TIME = 0.9;
 const HIT_TIME = 1.0;
 let HIT_POINTS = 5;
@@ -249,5 +261,32 @@ function distance(pos1: Vector3, pos2: Vector3): number {
   return a * a + b * b;
 }
 
-const hud: BuilderHUD = new BuilderHUD();
-hud.attachToEntity(book1)
+const spicebag1 = new Entity();
+  spicebag1.addComponent(resources.models.spicebag1);
+  const spicebag1Loc = new Transform({
+    position: new Vector3(25, 1.6, 12),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1, 1, 1)
+  });
+  spicebag1.addComponent(spicebag1Loc);
+  engine.addEntity(spicebag1);
+
+  const spicebag2 = new Entity();
+  spicebag2.addComponent(resources.models.spicebag2);
+  const spicebag2Loc = new Transform({
+    position: new Vector3(25, 1.6, 13),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1, 1, 1)
+  });
+  spicebag2.addComponent(spicebag2Loc);
+  engine.addEntity(spicebag2);
+
+  const spicebag3 = new Entity();
+  spicebag3.addComponent(resources.models.spicebag3);
+  const spicebag3Loc = new Transform({
+    position: new Vector3(25, 1.6, 14),
+    rotation: new Quaternion(0, 0, 0, 1),
+    scale: new Vector3(1, 1, 1)
+  });
+  spicebag3.addComponent(spicebag3Loc);
+  engine.addEntity(spicebag3);

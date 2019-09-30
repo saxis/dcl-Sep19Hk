@@ -13,7 +13,7 @@ export function CreateFloor2(scene): void {
     scale: new Vector3(1.8, 2.1, 1)
   });
   Wall_Stone_Small.addComponentOrReplace(transform_36);
-  engine.addEntity(Wall_Stone_Small)
+  //engine.addEntity(Wall_Stone_Small)
   
 
   const button = new Entity();
@@ -41,7 +41,7 @@ export function CreateFloor2(scene): void {
   });
   stairsToFloor3.addComponentOrReplace(transform_25);
   stairsToFloor3.addComponent(new AudioSource(resources.sounds.moveObject1));
-  engine.addEntity(stairsToFloor3); 
+  //engine.addEntity(stairsToFloor3); 
 
   
 
@@ -53,9 +53,8 @@ export function CreateFloor2(scene): void {
         .play();
       button.getComponent(AudioSource).playOnce();
      
-      
-      // engine.addEntity(stairsToFloor3);
-      // engine.addEntity(Wall_Stone_Small);
+      engine.addEntity(stairsToFloor3);
+      engine.addEntity(Wall_Stone_Small);
     })
   );
 

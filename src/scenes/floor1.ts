@@ -6,7 +6,7 @@ import utils from "../../node_modules/decentraland-ecs-utils/index";
 export function CreateFloor1(scene): void {
   const stairsToFloor2 = new Entity();
   const gltfShape_21 = new GLTFShape("models/Stairs_L_01/Stairs_L_01.glb");
-  stairsToFloor2.addComponentOrReplace(gltfShape_21);
+  stairsToFloor2.addComponentOrReplace(resources.models.stairs);
   const transform_25 = new Transform({
     position: new Vector3(26, 1.6, 21.65),
     rotation: new Quaternion(0, 0, 0, 1),
@@ -31,7 +31,7 @@ export function CreateFloor1(scene): void {
   const gltfShape_32 = new GLTFShape(
     "models/Wall_Stone_Small/Wall_Stone_Small.glb"
   );
-  Wall_Stone_Small.addComponentOrReplace(gltfShape_32);
+  Wall_Stone_Small.addComponentOrReplace(resources.models.wallStoneSmall);
   const transform_36 = new Transform({
     position: new Vector3(21.1, 5.6, 19.6),
     rotation: Quaternion.Euler(90, 0, 0),
@@ -41,7 +41,8 @@ export function CreateFloor1(scene): void {
 
   const button = new Entity();
   engine.addEntity(button);
-  button.addComponent(new GLTFShape("models/Square_Button.glb"));
+  //button.addComponent(new GLTFShape("models/Square_Button.glb"));
+  button.addComponent(resources.models.squareButton)
   button.addComponent(
     new Transform({
       position: new Vector3(16, 4.18, 4.65),
@@ -328,31 +329,13 @@ export function CreateFloor1(scene): void {
   barrel_04_c.addComponent(barrel_04cLoc);
   engine.addEntity(barrel_04_c);
 
-  const spicebag1 = new Entity();
-  spicebag1.addComponent(resources.models.spicebag1);
-  const spicebag1Loc = new Transform({
-    position: new Vector3(25, 1.6, 12),
-    rotation: new Quaternion(0, 0, 0, 1),
-    scale: new Vector3(1, 1, 1)
-  });
-  spicebag1.addComponent(spicebag1Loc);
-  engine.addEntity(spicebag1);
-
-  const spicebag2 = new Entity();
-  spicebag2.addComponent(resources.models.spicebag2);
-  const spicebag2Loc = new Transform({
-    position: new Vector3(25, 1.6, 13),
-    rotation: new Quaternion(0, 0, 0, 1),
-    scale: new Vector3(1, 1, 1)
-  });
-  spicebag2.addComponent(spicebag2Loc);
-  engine.addEntity(spicebag2);
+  
 
   const fishie = new Entity();
   fishie.addComponent(resources.models.dagger);
   const fishieLoc = new Transform({
     position: new Vector3(11, 3.6, 14),
-    rotation: Quaternion.Euler(180, 0, 180),
+    rotation: Quaternion.Euler(180, 0, 0),
     scale: new Vector3(5, 1, 5)
   });
   fishie.addComponent(fishieLoc);
