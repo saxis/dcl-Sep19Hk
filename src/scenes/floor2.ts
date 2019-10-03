@@ -74,7 +74,8 @@ export function CreateFloor2(scene): void {
   const secondFloorDoorPivot = new Entity();
   secondFloorDoorPivot.addComponent(
     new Transform({
-      position: new Vector3(19.7, 3.6, 19.42)
+      //position: new Vector3(19.7, 3.6, 19.42)
+      position: new Vector3(19.7, 3.62, 19.42)
     })
   );
   secondFloorDoorPivot.addComponent(new DoorState());

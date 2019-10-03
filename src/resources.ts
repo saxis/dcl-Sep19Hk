@@ -22,7 +22,6 @@ export default {
         spicebag3: new GLTFShape("models/floor2/Spicesbag_03/Spicesbag_03.glb"),
         longcrate: new GLTFShape("models/CrateLong_02/CrateLong_02.glb"),
         stairs: new GLTFShape("models/Stairs_L_01/Stairs_L_01.glb"),
-        // orcchair: new GLTFShape("models/orc_chair.glb"),
         lanternLit: new GLTFShape('models/lantern_lit.glb'),
         ironChestTop: new GLTFShape('models/Chest_Top_Iron_01/Chest_Top_Iron_01.glb'),
         blackStone: new GLTFShape('models/Stone_Module_4M/Stone_Module_4M.glb'),
@@ -37,7 +36,6 @@ export default {
         peasantGirl: new GLTFShape('models/peasantAnimated.glb'),
         peasant: new GLTFShape("models/peasantAnimated2.glb"),
         sackOfPotatoes: new GLTFShape("models/sackofpotatoes.glb"),
-        // woodTable: new GLTFShape("models/orc_table.glb"),
         woodTable: new GLTFShape("models/Table_Wood_01/Table_Wood_01.glb"),
         woodenDoor: new GLTFShape("models/Door_Wood_01/Door_Wood_01.glb"),
         stairFence: new GLTFShape('models/StairFence_01.glb'),
@@ -56,24 +54,5 @@ export default {
     textures: {
         textContainer: new Texture("src/images/dialogs/textContainer.png"),
         optionsContainer: new Texture("src/images/dialogs/optionsContainer.png"),
-        // playerPortraitDefault: new Texture("src/images/dialogs/player_default.png", {
-        //   hasAlpha: true
-        // }),
-        // playerPortraitSurprised: new Texture(
-        //   "src/images/dialogs/player_surprised.png",
-        //   { hasAlpha: true }
-        // ),
-        // playerPortraitThinking: new Texture("src/images/dialogs/player_thinking.png", {
-        //   hasAlpha: true
-        // }),
-        // npcPortraitDefault: new Texture("src/images/dialogs/dog_default.png", {
-        //   hasAlpha: true
-        // }),
-        // npcPortraitSurprised: new Texture("src/images/dialogs/dog_surprised.png", {
-        //   hasAlpha: true
-        // }),
-        // npcPortraitThinking: new Texture("src/images/dialogs/dog_thinking.png", {
-        //   hasAlpha: true
-        // })
       }
 }

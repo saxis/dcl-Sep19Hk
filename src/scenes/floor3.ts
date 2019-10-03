@@ -24,7 +24,7 @@ export function CreateFloor3(scene): void {
   const thirdFloorDoorPivot = new Entity();
   thirdFloorDoorPivot.addComponent(
     new Transform({
-      position: new Vector3(19.7, 5.6, 19.42)
+      position: new Vector3(19.7, 5.63, 19.42)
     })
   );
   thirdFloorDoorPivot.addComponent(new DoorState());

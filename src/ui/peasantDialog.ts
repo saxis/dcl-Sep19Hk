@@ -77,7 +77,8 @@ export class PeasantDialog extends SimpleDialog {
     const bottomDoorPivot = new Entity();
     bottomDoorPivot.addComponent(
       new Transform({
-        position: new Vector3(19.7, 1.6, 19.42)
+        //position: new Vector3(19.7, 1.6, 19.42)
+        position: new Vector3(19.7, 1.62, 19.42)
       })
     );
     bottomDoorPivot.addComponent(new DoorState());

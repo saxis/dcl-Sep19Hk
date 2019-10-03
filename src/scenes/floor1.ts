@@ -331,15 +331,15 @@ export function CreateFloor1(scene): void {
 
   
 
-  const fishie = new Entity();
-  fishie.addComponent(resources.models.dagger);
-  const fishieLoc = new Transform({
-    position: new Vector3(11, 3.6, 14),
-    rotation: Quaternion.Euler(180, 0, 0),
-    scale: new Vector3(5, 1, 5)
-  });
-  fishie.addComponent(fishieLoc);
-  engine.addEntity(fishie);
+  // const fishie = new Entity();
+  // fishie.addComponent(resources.models.dagger);
+  // const fishieLoc = new Transform({
+  //   position: new Vector3(11, 3.6, 14),
+  //   rotation: Quaternion.Euler(180, 0, 0),
+  //   scale: new Vector3(5, 1, 5)
+  // });
+  // fishie.addComponent(fishieLoc);
+  // engine.addEntity(fishie);
 
   // engine.addEntity(stairsToFloor2);
   // engine.addEntity(floor2Pillar);
